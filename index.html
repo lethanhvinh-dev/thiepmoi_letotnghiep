@@ -1180,6 +1180,448 @@
         right: var(--mobile-x, 28px);
       }
     }
+
+    /* =========================================================
+       RESPONSIVE MOBILE / TABLET
+       Giữ nguyên desktop, tối ưu riêng cho màn hình nhỏ.
+       ========================================================= */
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    img,
+    svg,
+    canvas,
+    video {
+      max-width: 100%;
+    }
+
+    /* Không cho nội dung chữ dài phá chiều ngang */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    a,
+    button,
+    label {
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    /* Card chính co theo màn hình */
+    #main-card {
+      width: 100%;
+      max-width: 900px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    #main-card>article {
+      width: 100%;
+      min-width: 0;
+    }
+
+    #main-card .relative.z-10.p-6,
+    #main-card .relative.z-10.p-6.sm\:p-12 {
+      min-width: 0;
+    }
+
+    /* Tiêu đề và các block chữ không bị ép một dòng */
+    #main-card h1,
+    #main-card .letter-frame,
+    #main-card .credential-block,
+    #main-card .credential-top,
+    #main-card .credential-bottom,
+    #main-card .info-box,
+    #main-card .rsvp-section,
+    #main-card footer {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .credential-top {
+      flex-wrap: wrap;
+    }
+
+    .credential-top>span:not(.credential-diamond) {
+      min-width: 0;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .credential-bottom {
+      max-width: 100%;
+      flex-wrap: wrap;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .credential-bottom span {
+      min-width: 0;
+      max-width: 100%;
+      white-space: normal;
+    }
+
+    /* RSVP: select / textarea / button luôn nằm gọn trong card */
+    .gold-input {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    #rsvp-attendance {
+      white-space: normal;
+      text-overflow: ellipsis;
+    }
+
+    .btn-outline {
+      max-width: 100%;
+      min-width: 0;
+      white-space: normal;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* Tên khách trên phong bì */
+    #envelope-guest-name {
+      max-width: 100%;
+      white-space: normal !important;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    @media (max-width: 640px) {
+
+      /* Giảm khoảng trống để nội dung thoáng hơn trên điện thoại */
+      #main-card {
+        padding: 24px 10px 40px;
+      }
+
+      #main-card>article {
+        border-radius: 20px;
+      }
+
+      #main-card .relative.z-10.p-6,
+      #main-card .relative.z-10.p-6.sm\:p-12 {
+        padding: 24px 16px !important;
+      }
+
+      #main-card header {
+        margin-bottom: 28px;
+      }
+
+      #main-card h1 {
+        font-size: clamp(1.55rem, 8vw, 2.15rem) !important;
+        line-height: 1.12;
+      }
+
+      #main-card h1 span {
+        display: block;
+        font-size: 0.48em !important;
+        line-height: 1.35;
+        letter-spacing: 0.06em !important;
+      }
+
+      .sub-label {
+        font-size: 8.5px;
+        letter-spacing: 0.16em;
+      }
+
+      .letter-frame {
+        padding: 20px 16px !important;
+        border-radius: 16px !important;
+      }
+
+      .letter-frame p {
+        overflow-wrap: anywhere;
+      }
+
+      .credential-block {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .credential-top {
+        gap: 7px;
+        font-size: 0.72rem;
+        line-height: 1.4;
+        letter-spacing: 0.06em;
+      }
+
+      .credential-bottom {
+        font-size: 0.68rem;
+        letter-spacing: 0.07em;
+        line-height: 1.4;
+      }
+
+      /* Countdown: vừa đủ rộng trên 320–430px */
+      #main-card .grid.grid-cols-4 {
+        gap: 5px;
+      }
+
+      #main-card .cd-cell {
+        padding: 10px 4px !important;
+        border-radius: 10px;
+      }
+
+      #main-card .cd-cell>span {
+        font-size: 1.25rem !important;
+      }
+
+      #main-card .cd-cell .sub-label {
+        letter-spacing: 0.08em !important;
+        font-size: 7.5px;
+      }
+
+      /* Thông tin thời gian / địa điểm */
+      #main-card section.grid.sm\:grid-cols-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #main-card .info-box {
+        padding: 20px 14px !important;
+      }
+
+      #main-card .info-box p {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      #main-card .info-box p[style*="font-size:1.35rem"] {
+        font-size: 1.15rem !important;
+      }
+
+      #main-card .info-box p.text-sm {
+        line-height: 1.55;
+      }
+
+      /* Hai nút hành động: xếp dọc, không rớt chữ */
+      #main-card>article .flex.flex-wrap.gap-3.justify-center {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #main-card>article .flex.flex-wrap.gap-3.justify-center .btn-outline {
+        width: 100%;
+        padding: 12px 14px !important;
+      }
+
+      /* RSVP */
+      .rsvp-header {
+        padding: 16px 14px !important;
+      }
+
+      .rsvp-header h3 {
+        font-size: 1.1rem !important;
+      }
+
+      .rsvp-section>div.p-6,
+      .rsvp-section>div.p-6.sm\:p-8 {
+        padding: 20px 14px !important;
+      }
+
+      #rsvp-form {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      #rsvp-attendance {
+        font-size: 0.82rem;
+        padding-left: 12px;
+        padding-right: 30px;
+      }
+
+      #rsvp-message {
+        min-height: 100px;
+      }
+
+      #rsvp-submit-btn {
+        letter-spacing: 0.12em;
+      }
+
+      /* Chữ ký không bị ép dòng */
+      #main-card footer .sub-label:last-child {
+        letter-spacing: 0.1em !important;
+        line-height: 1.5;
+        white-space: normal;
+      }
+
+      #main-card footer .font-playfair {
+        white-space: normal !important;
+      }
+
+      /* Giảm hiệu ứng nặng trên điện thoại */
+      .side-frame {
+        width: 32px;
+      }
+
+      .side-frame.left .side-frame-line {
+        left: 12px;
+      }
+
+      .side-frame.right .side-frame-line {
+        right: 12px;
+      }
+
+      .side-frame.left .side-frame-line-inner {
+        left: 17px;
+      }
+
+      .side-frame.right .side-frame-line-inner {
+        right: 17px;
+      }
+
+      .side-frame.left .side-frame-corner.top,
+      .side-frame.left .side-frame-corner.bottom {
+        left: 11px;
+      }
+
+      .side-frame.right .side-frame-corner.top,
+      .side-frame.right .side-frame-corner.bottom {
+        right: 11px;
+      }
+
+      /* Modal nhập tên */
+      #guest-modal {
+        padding: 12px !important;
+      }
+
+      #guest-modal .modal-card {
+        max-width: 100%;
+        padding: 22px 16px !important;
+        border-radius: 18px;
+      }
+
+      #guest-modal .btn-title {
+        padding: 10px 8px;
+        font-size: 0.82rem;
+      }
+
+      #guest-modal #guest-name-input {
+        font-size: 0.9rem;
+        padding: 12px 14px;
+      }
+
+      /* Phong bì */
+      #envelope-screen {
+        padding: 14px !important;
+        overflow: hidden;
+      }
+
+      #envelope-wrapper {
+        width: 100%;
+        max-width: 520px;
+      }
+
+      .envelope-body {
+        width: 100%;
+        max-width: 92vw;
+        min-height: 300px;
+      }
+
+      #envelope-guest-name {
+        font-size: clamp(1.05rem, 5.5vw, 1.5rem) !important;
+        line-height: 1.3 !important;
+      }
+
+      /* Tránh tam giác nắp phong bì tạo overflow ngang trên mobile */
+      .env-flap {
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-left-width: 50%;
+        border-right-width: 50%;
+      }
+
+      /* Ẩn khung hai bên khi màn hình quá hẹp để ưu tiên nội dung */
+      .side-frame {
+        opacity: 0.65;
+      }
+    }
+
+    @media (max-width: 380px) {
+      #main-card {
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      #main-card .relative.z-10.p-6,
+      #main-card .relative.z-10.p-6.sm\:p-12 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+
+      #main-card h1 {
+        font-size: 1.45rem !important;
+      }
+
+      .credential-top {
+        font-size: 0.66rem;
+      }
+
+      .credential-bottom {
+        font-size: 0.62rem;
+      }
+
+      #main-card .cd-cell {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+      }
+
+      #main-card .cd-cell>span {
+        font-size: 1.08rem !important;
+      }
+
+      #main-card .cd-cell .sub-label {
+        font-size: 7px;
+      }
+
+      #rsvp-attendance {
+        font-size: 0.76rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .float-anim,
+      .seal-pulse,
+      .spin-anim,
+      .spin-rev,
+      .dust-particle,
+      .main-spark,
+      #page-transition-fx {
+        animation: none !important;
+      }
+    }
+
+
+    @media (max-width: 640px) {
+      .env-flap {
+        height: 0;
+        border: 0;
+        width: 100%;
+        left: 0;
+        right: auto;
+        background: transparent;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+      }
+
+      .env-flap::before {
+        display: none;
+      }
+
+      .env-fold-bottom {
+        border-left-width: 50%;
+        border-right-width: 50%;
+      }
+    }
   </style>
 </head>
 
