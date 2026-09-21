@@ -1671,15 +1671,6 @@
           line-height: 1.3 !important;
         }
 
-        /* Tránh tam giác nắp phong bì tạo overflow ngang trên mobile */
-        .env-flap {
-          left: 0;
-          right: 0;
-          width: 100%;
-          border-left-width: 50%;
-          border-right-width: 50%;
-        }
-
         /* Ẩn khung hai bên khi màn hình quá hẹp để ưu tiên nội dung */
         .side-frame {
           opacity: 0.65;
@@ -1740,24 +1731,97 @@
         }
       }
 
+      /* =========================================================
+         PHONG BÌ MOBILE - FIX NẮP + NẾP GẤP + ANIMATION
+         Giữ nguyên giao diện desktop, chỉ thay cách dựng hình trên mobile.
+         ========================================================= */
       @media (max-width: 640px) {
-        .env-flap {
-          height: 0;
-          border: 0;
+        #envelope-screen {
+          padding: 14px !important;
+          overflow: visible !important;
+        }
+
+        #envelope-wrapper {
           width: 100%;
+          max-width: 520px;
+          overflow: visible;
+        }
+
+        .envelope-body {
+          width: min(92vw, 520px);
+          min-height: 300px;
+          overflow: visible;
+          perspective: 1000px;
+        }
+
+        /* NẮP PHONG BÌ: dùng hình tam giác thật thay vì border 260px */
+        .env-flap {
+          top: 0;
           left: 0;
-          right: auto;
-          background: transparent;
+          right: 0;
+          width: 100%;
+          height: 150px;
+          border: 0;
+          background: linear-gradient(
+            155deg,
+            #2a1804 0%,
+            #1a0d01 55%,
+            #100800 100%
+          );
           clip-path: polygon(0 0, 100% 0, 50% 100%);
+          transform-origin: 50% 0%;
+          transform: perspective(1000px) rotateX(0deg);
+          transition: transform 1s cubic-bezier(0.35, 0, 0.2, 1);
+          z-index: 50;
+          filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
         }
 
+        /* Nếp vàng nhẹ chạy theo hai cạnh của nắp */
         .env-flap::before {
-          display: none;
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            155deg,
+            transparent 48.5%,
+            rgba(212, 175, 55, 0.22) 49.5%,
+            rgba(212, 175, 55, 0.22) 50.5%,
+            transparent 51.5%
+          );
+          clip-path: polygon(0 0, 100% 0, 50% 100%);
+          pointer-events: none;
         }
 
+        .env-flap.open {
+          transform: perspective(1000px) rotateX(-178deg);
+        }
+
+        /* NẾP GẤP TRÁI / PHẢI */
+        .env-fold-left {
+          z-index: 25;
+          border-top: 150px solid transparent;
+          border-bottom: 150px solid transparent;
+          border-left: 105px solid rgba(0, 0, 0, 0.22);
+        }
+
+        .env-fold-right {
+          z-index: 25;
+          border-top: 150px solid transparent;
+          border-bottom: 150px solid transparent;
+          border-right: 105px solid rgba(0, 0, 0, 0.22);
+        }
+
+        /* NẾP GẤP ĐÁY: dùng clip-path để không phụ thuộc border % */
         .env-fold-bottom {
-          border-left-width: 50%;
-          border-right-width: 50%;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 120px;
+          border: 0;
+          background: rgba(212, 175, 55, 0.055);
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
+          z-index: 26;
         }
       }
     </style>
@@ -4300,14 +4364,15 @@
         // Thu phong bì bằng transform + opacity, không dùng filter blur.
         const wrap = document.getElementById("envelope-wrapper");
 
+        // Giữ phong bì đủ lâu để người dùng nhìn thấy trọn animation mở nắp.
         setTimeout(() => {
           wrap.style.transition =
-            "transform 0.48s cubic-bezier(0.22,1,0.36,1), opacity 0.48s ease";
+            "transform 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease";
           wrap.style.transform = "scale(0.975) translateZ(-8px)";
           wrap.style.opacity = "0";
-        }, 720);
+        }, 1400);
 
-        // Chuyển sang thiệp chính sau khi nắp phong bì đã đủ thời gian mở.
+        // Chuyển sang thiệp chính sau khi nắp mở + phong bì thu lại.
         setTimeout(() => {
           const envelopeScreen = document.getElementById("envelope-screen");
           const card = document.getElementById("main-card");
@@ -4319,7 +4384,7 @@
 
           // Chỉ bắn pháo giấy sau khi chuyển cảnh kết thúc để tránh giật khung hình.
           setTimeout(phaoGiay, 760);
-        }, 1080);
+        }, 1800);
       }
 
       // ── PHÁO GIẤY ──
