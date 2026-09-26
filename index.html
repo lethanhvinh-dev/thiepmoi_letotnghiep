@@ -1,1877 +1,67 @@
 <!doctype html>
+
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Thư Mời Lễ Tốt Nghiệp – Kỹ Sư Lê Thành Vinh 2026</title>
+
     <link rel="icon" href="/img/icon_thiepmoi_web.jpg" type="image/png" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Libraries -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+    <!-- Custom CSS -->
 
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background: radial-gradient(
-          ellipse at 30% 0%,
-          #1c0f00 0%,
-          #0d0700 45%,
-          #010000 100%
-        );
-        color: #f5efe0;
-        font-family: "Be Vietnam Pro", sans-serif;
-        overflow-x: hidden;
-        min-height: 100vh;
-      }
-
-      /* ── CANVAS ── */
-      #particles-canvas {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      /* ── FONT HELPERS ── */
-      .font-cinzel {
-        font-family: "Cinzel", serif;
-      }
-
-      .font-playfair {
-        font-family: "Playfair Display", serif;
-      }
-
-      .font-cormorant {
-        font-family: "Cormorant Garamond", serif;
-      }
-
-      /* ── GOLD SHIMMER TEXT ── */
-      .gold-text {
-        background: linear-gradient(
-          120deg,
-          #c8972a 0%,
-          #fdf3b0 30%,
-          #d4af37 55%,
-          #fdf3b0 80%,
-          #b8861e 100%
-        );
-        background-size: 220% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: shimmer 5s linear infinite;
-      }
-
-      @keyframes shimmer {
-        0% {
-          background-position: 0% center;
-        }
-
-        100% {
-          background-position: 220% center;
-        }
-      }
-
-      /* Text glow vàng sáng */
-      .gold-bright {
-        color: #fde68a;
-        text-shadow:
-          0 0 12px rgba(253, 230, 138, 0.55),
-          0 0 32px rgba(212, 175, 55, 0.25);
-      }
-
-      /* ── GLASS CARD (thiệp chính) ── */
-      .glass-card {
-        background: rgba(14, 8, 1, 0.92);
-        backdrop-filter: blur(28px);
-        -webkit-backdrop-filter: blur(28px);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        box-shadow:
-          0 0 0 1px rgba(212, 175, 55, 0.08),
-          0 30px 70px rgba(0, 0, 0, 0.75),
-          inset 0 1px 0 rgba(212, 175, 55, 0.18),
-          0 0 90px rgba(180, 130, 10, 0.06);
-      }
-
-      /* ── MODAL ── */
-      .modal-card {
-        background: linear-gradient(
-          160deg,
-          rgba(20, 11, 2, 0.98) 0%,
-          rgba(8, 4, 0, 1) 100%
-        );
-        border: 1px solid rgba(212, 175, 55, 0.28);
-        box-shadow:
-          0 40px 90px rgba(0, 0, 0, 0.92),
-          0 0 0 1px rgba(212, 175, 55, 0.06);
-      }
-
-      /* ── BUTTON CHỌN DANH XƯNG ── */
-      .btn-title {
-        background: rgba(212, 175, 55, 0.06);
-        border: 1px solid rgba(212, 175, 55, 0.25);
-        color: #fde8a0;
-        font-weight: 600;
-        font-size: 0.9rem;
-        border-radius: 14px;
-        padding: 12px;
-        transition: all 0.25s ease;
-        cursor: pointer;
-      }
-
-      .btn-title:hover {
-        background: rgba(212, 175, 55, 0.15);
-        border-color: rgba(212, 175, 55, 0.55);
-        box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
-        transform: translateY(-1px);
-      }
-
-      .btn-baby {
-        background: rgba(236, 72, 153, 0.08);
-        border: 1px solid rgba(236, 72, 153, 0.3);
-        color: #f9a8d4;
-      }
-
-      .btn-baby:hover {
-        background: rgba(236, 72, 153, 0.15);
-        border-color: rgba(236, 72, 153, 0.5);
-        box-shadow: 0 0 16px rgba(236, 72, 153, 0.15);
-      }
-
-      /* ── INPUT ── */
-      .gold-input {
-        background: rgba(8, 4, 0, 0.92);
-        border: 1px solid rgba(212, 175, 55, 0.28);
-        color: #fde8a0;
-        border-radius: 14px;
-        padding: 13px 18px;
-        width: 100%;
-        font-size: 0.95rem;
-        font-family: "Be Vietnam Pro", sans-serif;
-        transition: all 0.3s;
-        text-align: center;
-      }
-
-      .gold-input::placeholder {
-        color: rgba(212, 175, 55, 0.3);
-      }
-
-      .gold-input:focus {
-        outline: none;
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow:
-          0 0 0 3px rgba(212, 175, 55, 0.1),
-          0 0 14px rgba(212, 175, 55, 0.15);
-      }
-
-      /* ── BUTTON VÀNG (CTA) ── */
-      .btn-gold {
-        background: linear-gradient(
-          135deg,
-          #8b5800 0%,
-          #d97706 35%,
-          #fbbf24 50%,
-          #d97706 65%,
-          #8b5800 100%
-        );
-        background-size: 200% auto;
-        color: #080400;
-        font-weight: 700;
-        border: none;
-        cursor: pointer;
-        transition: all 0.4s ease;
-        box-shadow:
-          0 4px 18px rgba(217, 119, 6, 0.45),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        letter-spacing: 0.04em;
-      }
-
-      .btn-gold:hover {
-        background-position: right center;
-        box-shadow:
-          0 6px 26px rgba(217, 119, 6, 0.65),
-          inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        transform: translateY(-1px);
-      }
-
-      /* ── BUTTON VIỀN VÀNG ── */
-      .btn-outline {
-        background: rgba(10, 5, 0, 0.85);
-        border: 1px solid rgba(212, 175, 55, 0.38);
-        color: #fde68a;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .btn-outline:hover {
-        background: rgba(212, 175, 55, 0.1);
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow: 0 0 18px rgba(212, 175, 55, 0.14);
-        transform: translateY(-2px);
-      }
-
-      /* ── PHONG BÌ ── */
-      .envelope-body {
-        position: relative;
-        width: 520px;
-        max-width: 92vw;
-        min-height: 320px;
-        background: linear-gradient(
-          155deg,
-          #241504 0%,
-          #160d01 50%,
-          #0e0800 100%
-        );
-        border-radius: 6px 6px 14px 14px;
-        box-shadow:
-          0 40px 100px rgba(0, 0, 0, 0.88),
-          0 0 0 1px rgba(212, 175, 55, 0.24),
-          inset 0 1px 0 rgba(212, 175, 55, 0.28),
-          0 0 80px rgba(160, 110, 10, 0.15);
-      }
-
-      /* Nắp trên phong bì */
-      .env-flap {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 0;
-        border-left: 260px solid transparent;
-        border-right: 260px solid transparent;
-        border-top: 155px solid #1a0d01;
-        transform-origin: top center;
-        transition: transform 1s cubic-bezier(0.35, 0, 0.2, 1);
-        z-index: 10;
-        filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
-      }
-
-      /* Viền nắp sáng lên */
-      .env-flap::before {
-        content: "";
-        position: absolute;
-        top: -152px;
-        left: -258px;
-        right: -258px;
-        border-left: 258px solid transparent;
-        border-right: 258px solid transparent;
-        border-top: 152px solid rgba(212, 175, 55, 0.07);
-      }
-
-      .env-flap.open {
-        transform: rotateX(-178deg);
-      }
-
-      /* Nếp gấp đáy */
-      .env-fold-bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 0;
-        border-left: 260px solid transparent;
-        border-right: 260px solid transparent;
-        border-bottom: 120px solid rgba(212, 175, 55, 0.05);
-      }
-
-      /* Nếp gấp trái-phải */
-      .env-fold-left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        border-top: 155px solid transparent;
-        border-bottom: 150px solid transparent;
-        border-left: 100px solid rgba(0, 0, 0, 0.18);
-      }
-
-      .env-fold-right {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 0;
-        border-top: 155px solid transparent;
-        border-bottom: 150px solid transparent;
-        border-right: 100px solid rgba(0, 0, 0, 0.18);
-      }
-
-      /* Viền bên trong phong bì */
-      .env-inner-border {
-        position: absolute;
-        inset: 7px;
-        border: 1px solid rgba(212, 175, 55, 0.18);
-        border-radius: 4px 4px 9px 9px;
-        pointer-events: none;
-      }
-
-      /* Góc trang trí phong bì */
-      .env-corner {
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        opacity: 0.55;
-      }
-
-      .env-corner.tl {
-        top: 13px;
-        left: 13px;
-        border-top: 1.5px solid #d4af37;
-        border-left: 1.5px solid #d4af37;
-      }
-
-      .env-corner.tr {
-        top: 13px;
-        right: 13px;
-        border-top: 1.5px solid #d4af37;
-        border-right: 1.5px solid #d4af37;
-      }
-
-      .env-corner.bl {
-        bottom: 13px;
-        left: 13px;
-        border-bottom: 1.5px solid #d4af37;
-        border-left: 1.5px solid #d4af37;
-      }
-
-      .env-corner.br {
-        bottom: 13px;
-        right: 13px;
-        border-bottom: 1.5px solid #d4af37;
-        border-right: 1.5px solid #d4af37;
-      }
-
-      /* Tem thư */
-      .stamp {
-        position: absolute;
-        top: 15px;
-        right: 14px;
-        width: 48px;
-        height: 60px;
-        background: linear-gradient(135deg, #1a0e00, #261500);
-        border: 1.5px solid rgba(212, 175, 55, 0.45);
-        border-radius: 2px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2px;
-        outline: 1.5px dashed rgba(212, 175, 55, 0.28);
-        outline-offset: 4px;
-        box-shadow:
-          2px 2px 0 2px #120900,
-          -2px -2px 0 2px #120900,
-          2px -2px 0 2px #120900,
-          -2px 2px 0 2px #120900;
-      }
-
-      /* ── CON DẤU SÁP ── */
-      .wax-seal {
-        background: radial-gradient(
-          circle at 33% 33%,
-          #fbbf24,
-          #d97706,
-          #92400e,
-          #78350f
-        );
-        box-shadow:
-          0 8px 28px rgba(0, 0, 0, 0.75),
-          0 0 0 3px rgba(212, 175, 55, 0.28),
-          inset 0 2px 5px rgba(255, 255, 255, 0.28),
-          inset 0 -2px 8px rgba(0, 0, 0, 0.45),
-          0 0 24px rgba(245, 158, 11, 0.28);
-        border: 1px solid rgba(212, 175, 55, 0.45);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .wax-seal:hover {
-        transform: scale(1.07);
-        box-shadow:
-          0 12px 36px rgba(0, 0, 0, 0.85),
-          0 0 0 3px rgba(212, 175, 55, 0.5),
-          inset 0 2px 5px rgba(255, 255, 255, 0.35),
-          inset 0 -2px 8px rgba(0, 0, 0, 0.45),
-          0 0 42px rgba(245, 158, 11, 0.5);
-      }
-
-      /* ── THIỆP CHÍNH – CÁC KHUNG ── */
-      .info-box {
-        background: linear-gradient(
-          140deg,
-          rgba(28, 16, 2, 0.95) 0%,
-          rgba(16, 9, 1, 0.98) 100%
-        );
-        border: 1px solid rgba(212, 175, 55, 0.22);
-        box-shadow:
-          0 6px 20px rgba(0, 0, 0, 0.5),
-          inset 0 1px 0 rgba(212, 175, 55, 0.12),
-          0 0 18px rgba(212, 175, 55, 0.04);
-        transition: all 0.3s ease;
-      }
-
-      .info-box:hover {
-        border-color: rgba(212, 175, 55, 0.42);
-        box-shadow:
-          0 10px 28px rgba(0, 0, 0, 0.6),
-          inset 0 1px 0 rgba(212, 175, 55, 0.2),
-          0 0 26px rgba(212, 175, 55, 0.09);
-        transform: translateY(-2px);
-      }
-
-      /* Đồng hồ đếm ngược */
-      .cd-cell {
-        background: linear-gradient(
-          160deg,
-          rgba(36, 20, 3, 0.97) 0%,
-          rgba(18, 10, 1, 0.99) 100%
-        );
-        border: 1px solid rgba(212, 175, 55, 0.28);
-        box-shadow:
-          0 3px 12px rgba(0, 0, 0, 0.55),
-          inset 0 1px 0 rgba(212, 175, 55, 0.12);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cd-cell::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(212, 175, 55, 0.05) 0%,
-          transparent 60%
-        );
-      }
-
-      /* Khung giấy thư */
-      .letter-frame {
-        background: linear-gradient(
-          170deg,
-          rgba(255, 245, 200, 0.04) 0%,
-          rgba(212, 175, 55, 0.025) 50%,
-          rgba(255, 245, 200, 0.035) 100%
-        );
-        border-top: 2px solid rgba(212, 175, 55, 0.38);
-        border-left: 1px solid rgba(212, 175, 55, 0.12);
-        border-right: 1px solid rgba(212, 175, 55, 0.12);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.12);
-        position: relative;
-      }
-
-      .letter-frame::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(255, 245, 200, 0.35),
-          transparent
-        );
-      }
-
-      /* Tag nhãn */
-      /* ── THÔNG TIN HỌC VẤN – PHONG CÁCH ART DECO ── */
-      .credential-block {
-        position: relative;
-        max-width: 680px;
-        margin: 0 auto;
-        padding: 10px 8px 4px;
-        text-align: center;
-      }
-
-      .credential-top {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        color: #fde8a0;
-        font-family: "Cinzel", serif;
-        font-weight: 700;
-        font-size: clamp(0.76rem, 2.4vw, 0.95rem);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        text-shadow: 0 0 16px rgba(212, 175, 55, 0.12);
-      }
-
-      .credential-top::before,
-      .credential-top::after {
-        content: "";
-        width: clamp(28px, 8vw, 72px);
-        height: 1px;
-        flex: 0 0 auto;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(212, 175, 55, 0.55)
-        );
-      }
-
-      .credential-top::after {
-        background: linear-gradient(
-          90deg,
-          rgba(212, 175, 55, 0.55),
-          transparent
-        );
-      }
-
-      .credential-diamond {
-        width: 7px;
-        height: 7px;
-        transform: rotate(45deg);
-        background: #d4af37;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
-        flex: 0 0 auto;
-      }
-
-      .credential-bottom {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 10px;
-        padding: 7px 14px;
-        color: rgba(212, 175, 55, 0.64);
-        font-family: "Playfair Display", serif;
-        font-size: clamp(0.7rem, 2.1vw, 0.82rem);
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        border-top: 1px solid rgba(212, 175, 55, 0.16);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.12);
-      }
-
-      .credential-bottom i {
-        width: 13px;
-        height: 13px;
-        color: #d4af37;
-        opacity: 0.85;
-      }
-
-      @media (max-width: 480px) {
-        .credential-top {
-          gap: 8px;
-          letter-spacing: 0.07em;
-        }
-
-        .credential-bottom {
-          letter-spacing: 0.08em;
-          max-width: 100%;
-        }
-      }
-
-      /* RSVP section */
-      .rsvp-section {
-        background: linear-gradient(
-          160deg,
-          rgba(16, 9, 1, 0.99) 0%,
-          rgba(6, 3, 0, 1) 100%
-        );
-        border: 1px solid rgba(212, 175, 55, 0.22);
-      }
-
-      .rsvp-header {
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(212, 175, 55, 0.07),
-          transparent
-        );
-        border-bottom: 1px solid rgba(212, 175, 55, 0.14);
-      }
-
-      /* ── ANIMATIONS ── */
-      @keyframes float-up {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-9px);
-        }
-      }
-
-      @keyframes pulse-seal {
-        0%,
-        100% {
-          box-shadow:
-            0 8px 28px rgba(0, 0, 0, 0.75),
-            0 0 0 0 rgba(212, 175, 55, 0.5),
-            inset 0 2px 5px rgba(255, 255, 255, 0.28),
-            0 0 24px rgba(245, 158, 11, 0.28);
-        }
-
-        60% {
-          box-shadow:
-            0 8px 28px rgba(0, 0, 0, 0.75),
-            0 0 0 14px rgba(212, 175, 55, 0),
-            inset 0 2px 5px rgba(255, 255, 255, 0.28),
-            0 0 40px rgba(245, 158, 11, 0.4);
-        }
-      }
-
-      @keyframes spin-slow {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes fade-up {
-        from {
-          opacity: 0;
-          transform: translateY(22px);
-          filter: blur(3px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-          filter: blur(0);
-        }
-      }
-
-      @keyframes addr-blink {
-        0%,
-        100% {
-          opacity: 0.15;
-        }
-
-        50% {
-          opacity: 0.4;
-        }
-      }
-
-      .float-anim {
-        animation: float-up 4.5s ease-in-out infinite;
-      }
-
-      .seal-pulse {
-        animation: pulse-seal 2.8s ease-in-out infinite;
-      }
-
-      .spin-anim {
-        animation: spin-slow 14s linear infinite;
-      }
-
-      .spin-rev {
-        animation: spin-slow 18s linear infinite reverse;
-      }
-
-      .fade-up {
-        animation: fade-up 0.9s ease both;
-      }
-
-      /* ── CHUYỂN TRANG CINEMATIC 3D – TỐI ƯU GPU, GIỮ NGUYÊN KHUNG ── */
-      #guest-modal,
-      #envelope-screen,
-      #main-card {
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        transform-style: preserve-3d;
-        will-change: opacity, transform;
-        contain: layout paint;
-      }
-
-      /* Trong lúc chuyển cảnh: tạm dừng các hiệu ứng nền nặng để giữ FPS */
-      body.is-transitioning .spin-anim,
-      body.is-transitioning .spin-rev,
-      body.is-transitioning .dust-particle,
-      body.is-transitioning .main-spark {
-        animation-play-state: paused !important;
-      }
-
-      /* Tránh backdrop-filter chạy đồng thời ở hai màn hình khi chuyển cảnh. */
-      body.is-transitioning #guest-modal,
-      body.is-transitioning #envelope-screen,
-      body.is-transitioning .glass-card {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-      }
-
-      /* Lớp ánh sáng chuyển cảnh: chỉ dùng opacity + transform, tránh filter blur */
-      #page-transition-fx {
-        position: fixed;
-        inset: 0;
-        z-index: 999;
-        pointer-events: none;
-        opacity: 0;
-        overflow: hidden;
-        perspective: 1200px;
-        contain: strict;
-      }
-
-      #page-transition-fx::before {
-        content: "";
-        position: absolute;
-        inset: -12%;
-        background:
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(253, 230, 138, 0.14) 0%,
-            rgba(212, 175, 55, 0.06) 18%,
-            transparent 42%
-          ),
-          linear-gradient(
-            105deg,
-            transparent 0%,
-            transparent 39%,
-            rgba(253, 230, 138, 0.16) 48%,
-            rgba(255, 248, 210, 0.26) 50%,
-            rgba(253, 230, 138, 0.1) 52%,
-            transparent 61%
-          );
-        transform: translate3d(-115%, 0, 0);
-        will-change: transform;
-      }
-
-      #page-transition-fx::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at center,
-          transparent 0%,
-          rgba(1, 0, 0, 0.22) 72%,
-          rgba(1, 0, 0, 0.62) 100%
-        );
-        opacity: 0;
-        will-change: opacity;
-      }
-
-      #page-transition-fx.play {
-        opacity: 1;
-        animation: transitionFxFade 0.72s ease both;
-      }
-
-      #page-transition-fx.play::before {
-        animation: transitionSheen 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      #page-transition-fx.play::after {
-        animation: transitionVignette 0.72s ease both;
-      }
-
-      .cinematic-out,
-      .cinematic-in,
-      .cinematic-envelope-in {
-        pointer-events: none;
-      }
-
-      .cinematic-out {
-        animation: cinematicOut 0.54s cubic-bezier(0.22, 0.7, 0.25, 1) both;
-      }
-
-      .cinematic-in {
-        animation: cinematicIn 0.68s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      .cinematic-envelope-in {
-        animation: cinematicEnvelopeIn 0.68s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      @keyframes cinematicOut {
-        0% {
-          opacity: 1;
-          transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg)
-            rotateX(0deg) scale(1);
-        }
-
-        55% {
-          opacity: 1;
-          transform: perspective(1200px) translate3d(-3px, 0, -8px)
-            rotateY(-3deg) rotateX(0.7deg) scale(0.997);
-        }
-
-        100% {
-          opacity: 0;
-          transform: perspective(1200px) translate3d(-8px, 0, -22px)
-            rotateY(-5deg) rotateX(1deg) scale(0.992);
-        }
-      }
-
-      @keyframes cinematicIn {
-        0% {
-          opacity: 0;
-          transform: perspective(1200px) translate3d(8px, 0, -22px)
-            rotateY(5deg) rotateX(-1deg) scale(0.992);
-        }
-
-        100% {
-          opacity: 1;
-          transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg)
-            rotateX(0deg) scale(1);
-        }
-      }
-
-      @keyframes cinematicEnvelopeIn {
-        0% {
-          opacity: 0;
-          transform: perspective(1200px) translate3d(10px, 0, -20px)
-            rotateY(5deg) rotateX(-0.8deg) scale(0.994);
-        }
-
-        100% {
-          opacity: 1;
-          transform: perspective(1200px) translate3d(0, 0, 0) rotateY(0deg)
-            rotateX(0deg) scale(1);
-        }
-      }
-
-      @keyframes transitionSheen {
-        0% {
-          transform: translate3d(-115%, 0, 0);
-        }
-
-        100% {
-          transform: translate3d(115%, 0, 0);
-        }
-      }
-
-      @keyframes transitionVignette {
-        0%,
-        100% {
-          opacity: 0;
-        }
-
-        42% {
-          opacity: 0.72;
-        }
-
-        68% {
-          opacity: 0.16;
-        }
-      }
-
-      @keyframes transitionFxFade {
-        0%,
-        68% {
-          opacity: 1;
-        }
-
-        100% {
-          opacity: 0;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .cinematic-out,
-        .cinematic-in,
-        .cinematic-envelope-in,
-        #page-transition-fx.play,
-        #page-transition-fx.play::before,
-        #page-transition-fx.play::after {
-          animation: none !important;
-        }
-      }
-
-      /* Nút nhạc */
-      #music-toggle {
-        background: rgba(8, 4, 0, 0.82);
-        border: 1px solid rgba(212, 175, 55, 0.32);
-        color: #fbbf24;
-        backdrop-filter: blur(10px);
-        transition: all 0.3s;
-        box-shadow:
-          0 4px 14px rgba(0, 0, 0, 0.55),
-          0 0 10px rgba(212, 175, 55, 0.08);
-      }
-
-      #music-toggle:hover,
-      #music-toggle.on {
-        background: rgba(212, 175, 55, 0.14);
-        box-shadow:
-          0 4px 18px rgba(0, 0, 0, 0.65),
-          0 0 22px rgba(212, 175, 55, 0.22);
-      }
-
-      /* Scrollbar */
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: #020100;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(#b45309, #d97706);
-        border-radius: 3px;
-      }
-
-      /* Viền góc thiệp chính */
-      .card-corner {
-        position: absolute;
-        width: 64px;
-        height: 64px;
-        pointer-events: none;
-      }
-
-      .card-corner.tl {
-        top: 0;
-        left: 0;
-        border-top: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-left: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-radius: 24px 0 0 0;
-      }
-
-      .card-corner.tr {
-        top: 0;
-        right: 0;
-        border-top: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-right: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-radius: 0 24px 0 0;
-      }
-
-      .card-corner.bl {
-        bottom: 0;
-        left: 0;
-        border-bottom: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-left: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-radius: 0 0 0 24px;
-      }
-
-      .card-corner.br {
-        bottom: 0;
-        right: 0;
-        border-bottom: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-right: 1.5px solid rgba(212, 175, 55, 0.5);
-        border-radius: 0 0 24px 0;
-      }
-
-      /* Glow nền trên/dưới thiệp */
-      .glow-top {
-        background: radial-gradient(
-          ellipse at 50% 0%,
-          rgba(212, 175, 55, 0.11) 0%,
-          transparent 70%
-        );
-      }
-
-      .glow-bottom {
-        background: radial-gradient(
-          ellipse at 50% 100%,
-          rgba(212, 175, 55, 0.07) 0%,
-          transparent 70%
-        );
-      }
-
-      /* Đường kẻ trang trí */
-      .divider-gold {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: rgba(212, 175, 55, 0.55);
-        font-size: 13px;
-      }
-
-      .divider-gold::before,
-      .divider-gold::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(212, 175, 55, 0.45),
-          transparent
-        );
-      }
-
-      /* Chú thích nhỏ */
-      .sub-label {
-        font-size: 9.5px;
-        text-transform: uppercase;
-        letter-spacing: 0.28em;
-        font-family: "Cinzel", serif;
-        color: rgba(212, 175, 55, 0.5);
-      }
-
-      /* ── SHAKE ANIMATION (bắt buộc nhập tên) ── */
-      @keyframes shake {
-        0% {
-          transform: translateX(0);
-        }
-
-        15% {
-          transform: translateX(-7px);
-        }
-
-        30% {
-          transform: translateX(7px);
-        }
-
-        45% {
-          transform: translateX(-5px);
-        }
-
-        60% {
-          transform: translateX(5px);
-        }
-
-        75% {
-          transform: translateX(-3px);
-        }
-
-        90% {
-          transform: translateX(3px);
-        }
-
-        100% {
-          transform: translateX(0);
-        }
-      }
-
-      .shake-anim {
-        animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-      }
-
-      /* Thông báo lỗi nhập tên */
-      .name-error {
-        display: none;
-        align-items: center;
-        gap: 6px;
-        color: rgba(239, 68, 68, 0.85);
-        font-size: 12px;
-        font-weight: 500;
-        margin-top: -12px;
-        margin-bottom: 4px;
-        padding: 7px 12px;
-        background: rgba(239, 68, 68, 0.08);
-        border: 1px solid rgba(239, 68, 68, 0.22);
-        border-radius: 10px;
-        text-align: left;
-      }
-
-      /* ── HẠT BỤI BAY LÊN PHÁT SÁNG ── */
-      @keyframes rise-glow {
-        0% {
-          transform: translateY(0) scale(0.5);
-          opacity: 0;
-        }
-
-        10% {
-          opacity: 1;
-        }
-
-        50% {
-          transform: translateY(-45vh) scale(1);
-          opacity: 0.8;
-        }
-
-        80% {
-          opacity: 0.4;
-        }
-
-        100% {
-          transform: translateY(-100vh) scale(0.3);
-          opacity: 0;
-        }
-      }
-
-      .dust-particle {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-        animation: rise-glow linear infinite;
-      }
-
-      /* Khung vàng 2 bên */
-      .side-frame {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 48px;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .side-frame.left {
-        left: 0;
-      }
-
-      .side-frame.right {
-        right: 0;
-      }
-
-      .side-frame-line {
-        position: absolute;
-        top: 8%;
-        bottom: 8%;
-        width: 1px;
-        background: linear-gradient(
-          to bottom,
-          transparent 0%,
-          rgba(212, 175, 55, 0.15) 15%,
-          rgba(212, 175, 55, 0.35) 50%,
-          rgba(212, 175, 55, 0.15) 85%,
-          transparent 100%
-        );
-      }
-
-      .side-frame.left .side-frame-line {
-        left: 22px;
-      }
-
-      .side-frame.right .side-frame-line {
-        right: 22px;
-      }
-
-      .side-frame-line-inner {
-        position: absolute;
-        top: 15%;
-        bottom: 15%;
-        width: 1px;
-        background: linear-gradient(
-          to bottom,
-          transparent 0%,
-          rgba(212, 175, 55, 0.08) 20%,
-          rgba(212, 175, 55, 0.2) 50%,
-          rgba(212, 175, 55, 0.08) 80%,
-          transparent 100%
-        );
-      }
-
-      .side-frame.left .side-frame-line-inner {
-        left: 28px;
-      }
-
-      .side-frame.right .side-frame-line-inner {
-        right: 28px;
-      }
-
-      /* Góc trang trí khung */
-      .side-frame-corner {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-      }
-
-      .side-frame.left .side-frame-corner.top {
-        top: calc(8% - 1px);
-        left: 21px;
-        border-top: 1px solid rgba(212, 175, 55, 0.4);
-        border-left: 1px solid rgba(212, 175, 55, 0.4);
-      }
-
-      .side-frame.left .side-frame-corner.bottom {
-        bottom: calc(8% - 1px);
-        left: 21px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.4);
-        border-left: 1px solid rgba(212, 175, 55, 0.4);
-      }
-
-      .side-frame.right .side-frame-corner.top {
-        top: calc(8% - 1px);
-        right: 21px;
-        border-top: 1px solid rgba(212, 175, 55, 0.4);
-        border-right: 1px solid rgba(212, 175, 55, 0.4);
-      }
-
-      .side-frame.right .side-frame-corner.bottom {
-        bottom: calc(8% - 1px);
-        right: 21px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.4);
-        border-right: 1px solid rgba(212, 175, 55, 0.4);
-      }
-
-      /* ── HẠT SÁNG DECOR CHO NỘI DUNG THIỆP ── */
-      .main-sparkles {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        overflow: hidden;
-      }
-
-      .main-sparkles-side {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 92px;
-      }
-
-      .main-sparkles-side.left {
-        left: 0;
-      }
-
-      .main-sparkles-side.right {
-        right: 0;
-      }
-
-      .main-spark {
-        position: absolute;
-        display: block;
-        border-radius: 999px;
-        width: var(--size, 3px);
-        height: var(--size, 3px);
-        left: var(--x, 45px);
-        top: var(--y, 20%);
-        background: var(--spark, #f6d77a);
-        opacity: 0;
-        filter: blur(var(--blur, 0px));
-        box-shadow:
-          0 0 5px var(--spark, #f6d77a),
-          0 0 11px var(--glow, rgba(246, 215, 122, 0.72)),
-          0 0 22px var(--halo, rgba(246, 215, 122, 0.28));
-        animation:
-          letter-sparkle-float var(--dur, 5.8s) ease-in-out var(--delay, 0s)
-            infinite,
-          letter-sparkle-twinkle var(--twinkle, 2.4s) ease-in-out
-            var(--tw-delay, 0s) infinite;
-      }
-
-      .main-spark.diamond {
-        border-radius: 2px;
-        transform: rotate(45deg);
-        box-shadow:
-          0 0 5px var(--spark, #f6d77a),
-          0 0 12px var(--glow, rgba(246, 215, 122, 0.78)),
-          0 0 25px var(--halo, rgba(246, 215, 122, 0.34));
-      }
-
-      @keyframes letter-sparkle-float {
-        0% {
-          transform: translate3d(0, 28px, 0) scale(0.45);
-          opacity: 0;
-        }
-
-        12% {
-          opacity: 0.95;
-        }
-
-        42% {
-          transform: translate3d(var(--drift, 0px), -8px, 0) scale(1.12);
-          opacity: 0.9;
-        }
-
-        72% {
-          transform: translate3d(calc(var(--drift, 0px) * -0.55), -46px, 0)
-            scale(0.95);
-          opacity: 0.7;
-        }
-
-        100% {
-          transform: translate3d(var(--drift-end, 0px), -92px, 0) scale(0.3);
-          opacity: 0;
-        }
-      }
-
-      @keyframes letter-sparkle-twinkle {
-        0%,
-        100% {
-          filter: blur(var(--blur, 0px));
-          box-shadow:
-            0 0 4px var(--spark, #f6d77a),
-            0 0 9px var(--glow, rgba(246, 215, 122, 0.58)),
-            0 0 16px var(--halo, rgba(246, 215, 122, 0.2));
-        }
-
-        50% {
-          filter: blur(var(--blur-active, 0.25px));
-          box-shadow:
-            0 0 7px var(--spark, #f6d77a),
-            0 0 16px var(--glow, rgba(246, 215, 122, 0.9)),
-            0 0 30px var(--halo, rgba(246, 215, 122, 0.42));
-        }
-      }
-
-      @media (max-width: 640px) {
-        .main-sparkles-side {
-          width: 52px;
-        }
-
-        .main-spark {
-          left: var(--mobile-x, 28px);
-        }
-
-        .main-sparkles-side.left .main-spark {
-          left: var(--mobile-x, 28px);
-        }
-
-        .main-sparkles-side.right .main-spark {
-          left: auto;
-          right: var(--mobile-x, 28px);
-        }
-      }
-
-      /* =========================================================
-        RESPONSIVE MOBILE / TABLET
-        Giữ nguyên desktop, tối ưu riêng cho màn hình nhỏ.
-        ========================================================= */
-
-      html,
-      body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-
-      img,
-      svg,
-      canvas,
-      video {
-        max-width: 100%;
-      }
-
-      /* Không cho nội dung chữ dài phá chiều ngang */
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      span,
-      a,
-      button,
-      label {
-        overflow-wrap: break-word;
-        word-break: normal;
-      }
-
-      /* Card chính co theo màn hình */
-      #main-card {
-        width: 100%;
-        max-width: 900px;
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      #main-card > article {
-        width: 100%;
-        min-width: 0;
-      }
-
-      #main-card .relative.z-10.p-6,
-      #main-card .relative.z-10.p-6.sm\:p-12 {
-        min-width: 0;
-      }
-
-      /* Tiêu đề và các block chữ không bị ép một dòng */
-      #main-card h1,
-      #main-card .letter-frame,
-      #main-card .credential-block,
-      #main-card .credential-top,
-      #main-card .credential-bottom,
-      #main-card .info-box,
-      #main-card .rsvp-section,
-      #main-card footer {
-        min-width: 0;
-        max-width: 100%;
-      }
-
-      .credential-top {
-        flex-wrap: wrap;
-      }
-
-      .credential-top > span:not(.credential-diamond) {
-        min-width: 0;
-        max-width: 100%;
-        text-align: center;
-      }
-
-      .credential-bottom {
-        max-width: 100%;
-        flex-wrap: wrap;
-        white-space: normal;
-        text-align: center;
-      }
-
-      .credential-bottom span {
-        min-width: 0;
-        max-width: 100%;
-        white-space: normal;
-      }
-
-      /* RSVP: select / textarea / button luôn nằm gọn trong card */
-      .gold-input {
-        min-width: 0;
-        max-width: 100%;
-      }
-
-      #rsvp-attendance {
-        white-space: normal;
-        text-overflow: ellipsis;
-      }
-
-      .btn-outline {
-        max-width: 100%;
-        min-width: 0;
-        white-space: normal;
-        text-align: center;
-        justify-content: center;
-      }
-
-      /* Tên khách trên phong bì */
-      #envelope-guest-name {
-        max-width: 100%;
-        white-space: normal !important;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-      }
-
-      @media (max-width: 640px) {
-        /* Giảm khoảng trống để nội dung thoáng hơn trên điện thoại */
-        #main-card {
-          padding: 24px 10px 40px;
-        }
-
-        #main-card > article {
-          border-radius: 20px;
-        }
-
-        #main-card .relative.z-10.p-6,
-        #main-card .relative.z-10.p-6.sm\:p-12 {
-          padding: 24px 16px !important;
-        }
-
-        #main-card header {
-          margin-bottom: 28px;
-        }
-
-        #main-card h1 {
-          font-size: clamp(1.55rem, 8vw, 2.15rem) !important;
-          line-height: 1.12;
-        }
-
-        #main-card h1 span {
-          display: block;
-          font-size: 0.48em !important;
-          line-height: 1.35;
-          letter-spacing: 0.06em !important;
-        }
-
-        .sub-label {
-          font-size: 8.5px;
-          letter-spacing: 0.16em;
-        }
-
-        .letter-frame {
-          padding: 20px 16px !important;
-          border-radius: 16px !important;
-        }
-
-        .letter-frame p {
-          overflow-wrap: anywhere;
-        }
-
-        .credential-block {
-          padding-left: 0;
-          padding-right: 0;
-        }
-
-        .credential-top {
-          gap: 7px;
-          font-size: 0.72rem;
-          line-height: 1.4;
-          letter-spacing: 0.06em;
-        }
-
-        .credential-bottom {
-          font-size: 0.68rem;
-          letter-spacing: 0.07em;
-          line-height: 1.4;
-        }
-
-        /* Countdown: vừa đủ rộng trên 320–430px */
-        #main-card .grid.grid-cols-4 {
-          gap: 5px;
-        }
-
-        #main-card .cd-cell {
-          padding: 10px 4px !important;
-          border-radius: 10px;
-        }
-
-        #main-card .cd-cell > span {
-          font-size: 1.25rem !important;
-        }
-
-        #main-card .cd-cell .sub-label {
-          letter-spacing: 0.08em !important;
-          font-size: 7.5px;
-        }
-
-        /* Thông tin thời gian / địa điểm */
-        #main-card section.grid.sm\:grid-cols-2 {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
-        #main-card .info-box {
-          padding: 20px 14px !important;
-        }
-
-        #main-card .info-box p {
-          max-width: 100%;
-          overflow-wrap: anywhere;
-        }
-
-        #main-card .info-box p[style*="font-size:1.35rem"] {
-          font-size: 1.15rem !important;
-        }
-
-        #main-card .info-box p.text-sm {
-          line-height: 1.55;
-        }
-
-        /* Hai nút hành động: xếp dọc, không rớt chữ */
-        #main-card > article .flex.flex-wrap.gap-3.justify-center {
-          flex-direction: column;
-          width: 100%;
-        }
-
-        #main-card > article .flex.flex-wrap.gap-3.justify-center .btn-outline {
-          width: 100%;
-          padding: 12px 14px !important;
-        }
-
-        /* RSVP */
-        .rsvp-header {
-          padding: 16px 14px !important;
-        }
-
-        .rsvp-header h3 {
-          font-size: 1.1rem !important;
-        }
-
-        .rsvp-section > div.p-6,
-        .rsvp-section > div.p-6.sm\:p-8 {
-          padding: 20px 14px !important;
-        }
-
-        #rsvp-form {
-          width: 100%;
-          max-width: 100%;
-        }
-
-        #rsvp-attendance {
-          font-size: 0.82rem;
-          padding-left: 12px;
-          padding-right: 30px;
-        }
-
-        #rsvp-message {
-          min-height: 100px;
-        }
-
-        #rsvp-submit-btn {
-          letter-spacing: 0.12em;
-        }
-
-        /* Chữ ký không bị ép dòng */
-        #main-card footer .sub-label:last-child {
-          letter-spacing: 0.1em !important;
-          line-height: 1.5;
-          white-space: normal;
-        }
-
-        #main-card footer .font-playfair {
-          white-space: normal !important;
-        }
-
-        /* Giảm hiệu ứng nặng trên điện thoại */
-        .side-frame {
-          width: 32px;
-        }
-
-        .side-frame.left .side-frame-line {
-          left: 12px;
-        }
-
-        .side-frame.right .side-frame-line {
-          right: 12px;
-        }
-
-        .side-frame.left .side-frame-line-inner {
-          left: 17px;
-        }
-
-        .side-frame.right .side-frame-line-inner {
-          right: 17px;
-        }
-
-        .side-frame.left .side-frame-corner.top,
-        .side-frame.left .side-frame-corner.bottom {
-          left: 11px;
-        }
-
-        .side-frame.right .side-frame-corner.top,
-        .side-frame.right .side-frame-corner.bottom {
-          right: 11px;
-        }
-
-        /* Modal nhập tên */
-        #guest-modal {
-          padding: 12px !important;
-        }
-
-        #guest-modal .modal-card {
-          max-width: 100%;
-          padding: 22px 16px !important;
-          border-radius: 18px;
-        }
-
-        #guest-modal .btn-title {
-          padding: 10px 8px;
-          font-size: 0.82rem;
-        }
-
-        #guest-modal #guest-name-input {
-          font-size: 0.9rem;
-          padding: 12px 14px;
-        }
-
-        /* Phong bì */
-        #envelope-screen {
-          padding: 14px !important;
-          overflow: hidden;
-        }
-
-        #envelope-wrapper {
-          width: 100%;
-          max-width: 520px;
-        }
-
-        .envelope-body {
-          width: 100%;
-          max-width: 92vw;
-          min-height: 300px;
-        }
-
-        #envelope-guest-name {
-          font-size: clamp(1.05rem, 5.5vw, 1.5rem) !important;
-          line-height: 1.3 !important;
-        }
-
-        /* Ẩn khung hai bên khi màn hình quá hẹp để ưu tiên nội dung */
-        .side-frame {
-          opacity: 0.65;
-        }
-      }
-
-      @media (max-width: 380px) {
-        #main-card {
-          padding-left: 6px;
-          padding-right: 6px;
-        }
-
-        #main-card .relative.z-10.p-6,
-        #main-card .relative.z-10.p-6.sm\:p-12 {
-          padding-left: 12px !important;
-          padding-right: 12px !important;
-        }
-
-        #main-card h1 {
-          font-size: 1.45rem !important;
-        }
-
-        .credential-top {
-          font-size: 0.66rem;
-        }
-
-        .credential-bottom {
-          font-size: 0.62rem;
-        }
-
-        #main-card .cd-cell {
-          padding-left: 2px !important;
-          padding-right: 2px !important;
-        }
-
-        #main-card .cd-cell > span {
-          font-size: 1.08rem !important;
-        }
-
-        #main-card .cd-cell .sub-label {
-          font-size: 7px;
-        }
-
-        #rsvp-attendance {
-          font-size: 0.76rem;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .float-anim,
-        .seal-pulse,
-        .spin-anim,
-        .spin-rev,
-        .dust-particle,
-        .main-spark,
-        #page-transition-fx {
-          animation: none !important;
-        }
-      }
-
-      /* =========================================================
-         PHONG BÌ MOBILE - FIX NẮP + NẾP GẤP + ANIMATION
-         Giữ nguyên giao diện desktop, chỉ thay cách dựng hình trên mobile.
-         ========================================================= */
-      @media (max-width: 640px) {
-        #envelope-screen {
-          padding: 14px !important;
-          overflow: visible !important;
-        }
-
-        #envelope-wrapper {
-          width: 100%;
-          max-width: 520px;
-          overflow: visible;
-        }
-
-        .envelope-body {
-          width: min(92vw, 520px);
-          min-height: 300px;
-          overflow: visible;
-          perspective: 1000px;
-        }
-
-        /* NẮP PHONG BÌ: dùng hình tam giác thật thay vì border 260px */
-        .env-flap {
-          top: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          height: 150px;
-          border: 0;
-          background: linear-gradient(
-            155deg,
-            #2a1804 0%,
-            #1a0d01 55%,
-            #100800 100%
-          );
-          clip-path: polygon(0 0, 100% 0, 50% 100%);
-          transform-origin: 50% 0%;
-          transform: perspective(1000px) rotateX(0deg);
-          transition: transform 1s cubic-bezier(0.35, 0, 0.2, 1);
-          z-index: 50;
-          filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
-        }
-
-        /* Nếp vàng nhẹ chạy theo hai cạnh của nắp */
-        .env-flap::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            155deg,
-            transparent 48.5%,
-            rgba(212, 175, 55, 0.22) 49.5%,
-            rgba(212, 175, 55, 0.22) 50.5%,
-            transparent 51.5%
-          );
-          clip-path: polygon(0 0, 100% 0, 50% 100%);
-          pointer-events: none;
-        }
-
-        .env-flap.open {
-          transform: perspective(1000px) rotateX(-178deg);
-        }
-
-        /* NẾP GẤP TRÁI / PHẢI */
-        .env-fold-left {
-          z-index: 25;
-          border-top: 150px solid transparent;
-          border-bottom: 150px solid transparent;
-          border-left: 105px solid rgba(0, 0, 0, 0.22);
-        }
-
-        .env-fold-right {
-          z-index: 25;
-          border-top: 150px solid transparent;
-          border-bottom: 150px solid transparent;
-          border-right: 105px solid rgba(0, 0, 0, 0.22);
-        }
-
-        /* NẾP GẤP ĐÁY: dùng clip-path để không phụ thuộc border % */
-        .env-fold-bottom {
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 120px;
-          border: 0;
-          background: rgba(212, 175, 55, 0.055);
-          clip-path: polygon(0 100%, 50% 0, 100% 100%);
-          z-index: 26;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body class="relative selection:bg-amber-600 selection:text-black">
-    <!-- Lớp hiệu ứng chuyển cảnh cinematic – không ảnh hưởng layout/scroll -->
+    <!-- Lớp hiệu ứng chuyển cảnh cinematic -->
+
     <div id="page-transition-fx" aria-hidden="true"></div>
 
     <!-- Hạt bụi vàng nền -->
+
     <canvas id="particles-canvas"></canvas>
 
     <!-- Vùng sáng nền động -->
+
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <div
-        class="absolute -top-40 -left-20 w-[700px] h-[700px] rounded-full opacity-60"
-        style="
-          background: radial-gradient(
-            circle,
-            rgba(160, 100, 5, 0.07) 0%,
-            transparent 68%
-          );
-          animation: float-up 9s ease-in-out infinite;
-        "
-      ></div>
-      <div
-        class="absolute -bottom-32 -right-16 w-[600px] h-[600px] rounded-full opacity-60"
-        style="
-          background: radial-gradient(
-            circle,
-            rgba(140, 90, 5, 0.06) 0%,
-            transparent 68%
-          );
-          animation: float-up 11s ease-in-out infinite reverse;
-        "
-      ></div>
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full"
-        style="
-          background: radial-gradient(
-            circle,
-            rgba(212, 175, 55, 0.035) 0%,
-            transparent 68%
-          );
-          animation: float-up 14s ease-in-out infinite 3s;
-        "
-      ></div>
+      <div class="glow-bg-1"></div>
+
+      <div class="glow-bg-2"></div>
+
+      <div class="glow-bg-3"></div>
     </div>
 
     <!-- Nút nhạc nền -->
+
     <button
       id="music-toggle"
       onclick="toggleMusic()"
@@ -1880,525 +70,173 @@
     >
       <i data-lucide="music-2" class="w-5 h-5"></i>
     </button>
+
     <audio id="bg-music" loop preload="auto">
       <source src="/nhacthiepmoi.mp3" type="audio/mpeg" />
     </audio>
 
-    <!-- ═══════════════════════════════════════════════════════
-          BƯỚC 1 & 2: NHẬP THÔNG TIN KHÁCH MỜI
-      ════════════════════════════════════════════════════════ -->
+    <!-- BƯỚC 1 & 2: NHẬP THÔNG TIN KHÁCH MỜI -->
+
     <div
       id="guest-modal"
-      class="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style="background: rgba(1, 0, 0, 0.96); backdrop-filter: blur(22px)"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 guest-modal-bg"
     >
-      <!-- ── Hiệu ứng nền modal ── -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <!-- Vòng trang trí xoay -->
         <div class="absolute inset-0 flex items-center justify-center">
           <div
-            class="w-[600px] h-[600px] rounded-full spin-anim"
-            style="border: 1px solid rgba(212, 175, 55, 0.08)"
+            class="w-[600px] h-[600px] rounded-full spin-anim ring-border-1"
           ></div>
+
           <div
-            class="absolute w-[450px] h-[450px] rounded-full spin-rev"
-            style="border: 1px solid rgba(212, 175, 55, 0.06)"
+            class="absolute w-[450px] h-[450px] rounded-full spin-rev ring-border-2"
           ></div>
+
           <div
-            class="absolute w-[300px] h-[300px] rounded-full spin-anim"
-            style="
-              border: 1px dashed rgba(212, 175, 55, 0.05);
-              animation-duration: 25s;
-            "
+            class="absolute w-[300px] h-[300px] rounded-full spin-anim ring-border-3"
           ></div>
         </div>
 
-        <!-- Quầng sáng vàng trung tâm -->
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px]"
-          style="
-            background: radial-gradient(
-              ellipse,
-              rgba(180, 130, 20, 0.09) 0%,
-              transparent 65%
-            );
-          "
-        ></div>
+        <div class="modal-center-glow"></div>
 
-        <!-- Quầng sáng góc trên trái -->
-        <div
-          class="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full"
-          style="
-            background: radial-gradient(
-              circle,
-              rgba(160, 110, 15, 0.07) 0%,
-              transparent 60%
-            );
-            animation: float-up 8s ease-in-out infinite;
-          "
-        ></div>
+        <div class="modal-corner-glow-tl"></div>
 
-        <!-- Quầng sáng góc dưới phải -->
-        <div
-          class="absolute -bottom-28 -right-28 w-[450px] h-[450px] rounded-full"
-          style="
-            background: radial-gradient(
-              circle,
-              rgba(140, 95, 8, 0.06) 0%,
-              transparent 60%
-            );
-            animation: float-up 10s ease-in-out infinite reverse;
-          "
-        ></div>
+        <div class="modal-corner-glow-br"></div>
 
         <!-- Hạt sáng bay -->
-        <div
-          style="
-            position: absolute;
-            top: 15%;
-            left: 10%;
-            width: 4px;
-            height: 4px;
-            background: #d4af37;
-            border-radius: 50%;
-            opacity: 0.3;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-            animation: float-up 5s ease-in-out infinite;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 25%;
-            right: 15%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            border-radius: 50%;
-            opacity: 0.25;
-            box-shadow: 0 0 6px rgba(251, 191, 36, 0.4);
-            animation: float-up 6s ease-in-out infinite 1s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            bottom: 20%;
-            left: 20%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            border-radius: 50%;
-            opacity: 0.2;
-            box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
-            animation: float-up 7s ease-in-out infinite 2s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 60%;
-            right: 12%;
-            width: 4px;
-            height: 4px;
-            background: #fde68a;
-            border-radius: 50%;
-            opacity: 0.22;
-            box-shadow: 0 0 8px rgba(253, 230, 138, 0.3);
-            animation: float-up 5.5s ease-in-out infinite 0.5s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 40%;
-            left: 8%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            border-radius: 50%;
-            opacity: 0.18;
-            box-shadow: 0 0 5px rgba(251, 191, 36, 0.3);
-            animation: float-up 8s ease-in-out infinite 3s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            bottom: 35%;
-            right: 25%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            border-radius: 50%;
-            opacity: 0.2;
-            box-shadow: 0 0 7px rgba(212, 175, 55, 0.35);
-            animation: float-up 6.5s ease-in-out infinite 1.5s;
-          "
-        ></div>
+
+        <div class="particle-spark p-s-1"></div>
+
+        <div class="particle-spark p-s-2"></div>
+
+        <div class="particle-spark p-s-3"></div>
+
+        <div class="particle-spark p-s-4"></div>
+
+        <div class="particle-spark p-s-5"></div>
+
+        <div class="particle-spark p-s-6"></div>
 
         <!-- Đường chéo sáng nhẹ -->
-        <div
-          style="
-            position: absolute;
-            top: 0;
-            left: 30%;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(
-              to bottom,
-              transparent 0%,
-              rgba(212, 175, 55, 0.04) 40%,
-              rgba(212, 175, 55, 0.08) 50%,
-              rgba(212, 175, 55, 0.04) 60%,
-              transparent 100%
-            );
-            transform: rotate(15deg);
-            transform-origin: top center;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 0;
-            right: 25%;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(
-              to bottom,
-              transparent 0%,
-              rgba(212, 175, 55, 0.03) 45%,
-              rgba(212, 175, 55, 0.06) 55%,
-              rgba(212, 175, 55, 0.03) 65%,
-              transparent 100%
-            );
-            transform: rotate(-12deg);
-            transform-origin: top center;
-          "
-        ></div>
+
+        <div class="diagonal-line d-line-1"></div>
+
+        <div class="diagonal-line d-line-2"></div>
       </div>
 
-      <!-- ── KHUNG VÀNG + HẠT BỤI TRÁI ── -->
+      <!-- KHUNG VÀNG + HẠT BỤI TRÁI -->
+
       <div class="side-frame left">
         <div class="side-frame-line"></div>
+
         <div class="side-frame-line-inner"></div>
+
         <div class="side-frame-corner top"></div>
+
         <div class="side-frame-corner bottom"></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 18px;
-            bottom: 5%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            box-shadow:
-              0 0 6px #d4af37,
-              0 0 12px rgba(212, 175, 55, 0.4);
-            animation-duration: 6s;
-            animation-delay: 0s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 24px;
-            bottom: 12%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 5px #fde68a,
-              0 0 10px rgba(253, 230, 138, 0.3);
-            animation-duration: 7s;
-            animation-delay: 0.8s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 20px;
-            bottom: 22%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 7px #fbbf24,
-              0 0 14px rgba(251, 191, 36, 0.35);
-            animation-duration: 5.5s;
-            animation-delay: 1.6s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 26px;
-            bottom: 35%;
-            width: 2px;
-            height: 2px;
-            background: #d4af37;
-            box-shadow:
-              0 0 5px #d4af37,
-              0 0 10px rgba(212, 175, 55, 0.3);
-            animation-duration: 8s;
-            animation-delay: 2.4s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 15px;
-            bottom: 48%;
-            width: 3px;
-            height: 3px;
-            background: #fde68a;
-            box-shadow:
-              0 0 6px #fde68a,
-              0 0 12px rgba(253, 230, 138, 0.4);
-            animation-duration: 6.5s;
-            animation-delay: 3.2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 22px;
-            bottom: 60%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 5px #fbbf24,
-              0 0 10px rgba(251, 191, 36, 0.3);
-            animation-duration: 7.5s;
-            animation-delay: 4s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 28px;
-            bottom: 72%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            box-shadow:
-              0 0 6px #d4af37,
-              0 0 14px rgba(212, 175, 55, 0.4);
-            animation-duration: 5s;
-            animation-delay: 0.5s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 19px;
-            bottom: 85%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 5px #fde68a,
-              0 0 10px rgba(253, 230, 138, 0.3);
-            animation-duration: 6s;
-            animation-delay: 2s;
-          "
-        ></div>
+
+        <div class="dust-particle dust-l-1"></div>
+
+        <div class="dust-particle dust-l-2"></div>
+
+        <div class="dust-particle dust-l-3"></div>
+
+        <div class="dust-particle dust-l-4"></div>
+
+        <div class="dust-particle dust-l-5"></div>
+
+        <div class="dust-particle dust-l-6"></div>
+
+        <div class="dust-particle dust-l-7"></div>
+
+        <div class="dust-particle dust-l-8"></div>
       </div>
 
-      <!-- ── KHUNG VÀNG + HẠT BỤI PHẢI ── -->
+      <!-- KHUNG VÀNG + HẠT BỤI PHẢI -->
+
       <div class="side-frame right">
         <div class="side-frame-line"></div>
+
         <div class="side-frame-line-inner"></div>
+
         <div class="side-frame-corner top"></div>
+
         <div class="side-frame-corner bottom"></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 18px;
-            bottom: 8%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 6px #fbbf24,
-              0 0 12px rgba(251, 191, 36, 0.4);
-            animation-duration: 6.5s;
-            animation-delay: 0.3s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 24px;
-            bottom: 18%;
-            width: 2px;
-            height: 2px;
-            background: #d4af37;
-            box-shadow:
-              0 0 5px #d4af37,
-              0 0 10px rgba(212, 175, 55, 0.3);
-            animation-duration: 7.5s;
-            animation-delay: 1.2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 20px;
-            bottom: 30%;
-            width: 3px;
-            height: 3px;
-            background: #fde68a;
-            box-shadow:
-              0 0 7px #fde68a,
-              0 0 14px rgba(253, 230, 138, 0.35);
-            animation-duration: 5s;
-            animation-delay: 2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 26px;
-            bottom: 42%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 5px #fbbf24,
-              0 0 10px rgba(251, 191, 36, 0.3);
-            animation-duration: 8s;
-            animation-delay: 2.8s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 15px;
-            bottom: 55%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            box-shadow:
-              0 0 6px #d4af37,
-              0 0 12px rgba(212, 175, 55, 0.4);
-            animation-duration: 6s;
-            animation-delay: 3.5s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 22px;
-            bottom: 65%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 5px #fde68a,
-              0 0 10px rgba(253, 230, 138, 0.3);
-            animation-duration: 7s;
-            animation-delay: 4.3s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 28px;
-            bottom: 78%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 6px #fbbf24,
-              0 0 14px rgba(251, 191, 36, 0.35);
-            animation-duration: 5.5s;
-            animation-delay: 1s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 19px;
-            bottom: 90%;
-            width: 2px;
-            height: 2px;
-            background: #d4af37;
-            box-shadow:
-              0 0 5px #d4af37,
-              0 0 10px rgba(212, 175, 55, 0.3);
-            animation-duration: 6.5s;
-            animation-delay: 2.5s;
-          "
-        ></div>
+
+        <div class="dust-particle dust-r-1"></div>
+
+        <div class="dust-particle dust-r-2"></div>
+
+        <div class="dust-particle dust-r-3"></div>
+
+        <div class="dust-particle dust-r-4"></div>
+
+        <div class="dust-particle dust-r-5"></div>
+
+        <div class="dust-particle dust-r-6"></div>
+
+        <div class="dust-particle dust-r-7"></div>
+
+        <div class="dust-particle dust-r-8"></div>
       </div>
 
       <div
         class="modal-card relative z-10 w-full max-w-[420px] rounded-2xl p-8 text-center overflow-hidden"
       >
-        <!-- Ánh vàng phía trên modal -->
-        <div
-          class="absolute -top-20 left-1/2 -translate-x-1/2 w-72 h-36 rounded-full blur-3xl pointer-events-none"
-          style="
-            background: radial-gradient(
-              ellipse,
-              rgba(212, 175, 55, 0.18) 0%,
-              transparent 68%
-            );
-          "
-        ></div>
+        <div class="modal-top-sheen"></div>
 
         <!-- Chỉ báo bước -->
+
         <div class="flex items-center justify-center gap-2 mb-6">
-          <span style="color: rgba(212, 175, 55, 0.5); font-size: 11px">✦</span>
+          <span class="step-star">✦</span>
+
           <span
             id="step-dot-1"
-            class="w-2.5 h-2.5 rounded-full transition-all duration-300"
-            style="
-              background: #d4af37;
-              box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
-            "
+            class="w-2.5 h-2.5 rounded-full transition-all duration-300 step-dot-active"
           ></span>
+
           <span
             id="step-dot-2"
             class="w-2.5 h-2.5 rounded-full bg-gray-800 transition-all duration-300"
           ></span>
-          <span style="color: rgba(212, 175, 55, 0.5); font-size: 11px">✦</span>
+
+          <span class="step-star">✦</span>
         </div>
 
-        <!-- Icon phong bì nhỏ -->
-        <!-- <div class="w-14 h-14 mx-auto mb-5 rounded-full flex items-center justify-center"
-              style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.35); box-shadow: 0 0 22px rgba(212,175,55,0.12);">
-            <i data-lucide="mail-open" class="w-6 h-6" style="color: #d4af37;"></i>
-          </div> -->
+        <!-- BƯỚC 1: CHỌN CÁCH XƯNG HÔ -->
 
-        <!-- ─── BƯỚC 1: CHỌN CÁCH XƯNG HÔ ─── -->
         <div id="modal-step-1">
           <p class="sub-label mb-1">Bước 1 / 2</p>
-          <h2
-            class="font-playfair text-xl font-bold mt-2 mb-1"
-            style="color: #fde8a0"
-          >
-            Xin chọn cách gọi phù hợp
+
+          <h2 class="font-playfair text-xl font-bold mt-2 mb-1 text-gold-light">
+            Đối Với Thành Vinh bạn là gì?
           </h2>
-          <p class="text-sm mb-6" style="color: rgba(212, 175, 55, 0.5)">
+
+          <!-- <p class="text-sm mb-6 text-gold-sub">
             Đối với
-            <span style="color: #fbbf24; font-weight: 600">Thành Vinh</span> bạn
-            là gì ?
-          </p>
+
+            <span class="text-amber-400 font-semibold">Thành Vinh</span> bạn là
+            gì ?
+          </p> -->
 
           <div class="grid grid-cols-2 gap-3 mb-2">
             <button onclick="chonDanhXung('Bạn')" class="btn-title">Bạn</button>
+
             <button onclick="chonDanhXung('Anh')" class="btn-title">Anh</button>
+
             <button onclick="chonDanhXung('Chị')" class="btn-title">Chị</button>
+
             <button onclick="chonDanhXung('Em')" class="btn-title">Em</button>
+
             <button onclick="chonDanhXung('Cô')" class="btn-title">Cô</button>
+
             <button onclick="chonDanhXung('Chú')" class="btn-title">Chú</button>
+
             <button onclick="chonDanhXung('Bác')" class="btn-title">Bác</button>
+
             <button onclick="chonDanhXung('Gia đình')" class="btn-title">
               Gia đình
             </button>
+
             <button
               onclick="chonDanhXung('Baby')"
               class="btn-baby btn-title col-span-2"
@@ -2408,18 +246,14 @@
           </div>
         </div>
 
-        <!-- ─── BƯỚC 2: NHẬP TÊN ─── -->
+        <!-- BƯỚC 2: NHẬP TÊN -->
+
         <div id="modal-step-2" class="hidden">
           <p class="sub-label mb-1">Bước 2 / 2</p>
-          <h2
-            class="font-playfair text-xl font-bold mt-2 mb-1"
-            style="color: #fde8a0"
-          >
+
+          <h2 class="font-playfair text-xl font-bold mt-2 mb-1 text-gold-light">
             Cho Thành Vinh được biết tên của bạn nhé!
           </h2>
-          <!-- <p class="text-sm mb-5" style="color: rgba(212,175,55,0.5);">
-            Thiệp mời sẽ được cá nhân hóa riêng cho bạn ✨
-          </p> -->
 
           <div class="relative mb-2">
             <input
@@ -2429,18 +263,15 @@
               class="gold-input"
               oninput="xoaLoi()"
             />
+
             <span
               id="danh-xung-badge"
-              class="absolute right-3 top-3 px-2.5 py-0.5 text-xs rounded-full font-semibold"
-              style="
-                background: rgba(212, 175, 55, 0.14);
-                color: #fbbf24;
-                border: 1px solid rgba(212, 175, 55, 0.3);
-              "
+              class="absolute right-3 top-3 px-2.5 py-0.5 text-xs rounded-full font-semibold badge-default"
             ></span>
           </div>
 
           <!-- Thông báo lỗi bắt buộc nhập tên -->
+
           <div id="name-error-msg" class="name-error mb-3">
             <svg
               width="14"
@@ -2453,24 +284,23 @@
               stroke-linejoin="round"
             >
               <circle cx="12" cy="12" r="10" />
+
               <line x1="12" y1="8" x2="12" y2="12" />
+
               <line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
+
             Vui lòng nhập tên của bạn trước khi mở thư mời.
           </div>
 
           <div class="flex gap-3">
             <button
               onclick="quayLaiBuoc1()"
-              class="flex-1 py-3 rounded-xl text-sm font-medium transition-all"
-              style="
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                color: rgba(245, 245, 245, 0.45);
-                background: rgba(255, 255, 255, 0.02);
-              "
+              class="btn-back flex-1 py-3 rounded-xl text-sm font-medium transition-all"
             >
               ← Quay lại
             </button>
+
             <button
               onclick="batDauPhongBi()"
               class="btn-gold flex-[2] py-3 rounded-xl text-sm"
@@ -2482,775 +312,197 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════
-          PHONG BÌ THƯ
-      ════════════════════════════════════════════════════════ -->
+    <!-- PHONG BÌ THƯ -->
+
     <div
       id="envelope-screen"
-      class="hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-7 p-4"
-      style="background: rgba(1, 0, 0, 0.93); backdrop-filter: blur(26px)"
+      class="hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-7 p-4 env-screen-bg"
     >
-      <!-- ── Hiệu ứng nền phong bì ── -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <!-- Quầng sáng trung tâm lớn -->
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]"
-          style="
-            background: radial-gradient(
-              ellipse,
-              rgba(180, 130, 15, 0.1) 0%,
-              transparent 60%
-            );
-          "
-        ></div>
+        <div class="env-center-glow"></div>
 
-        <!-- Quầng sáng phụ góc trên -->
-        <div
-          class="absolute -top-40 left-1/4 w-[500px] h-[500px] rounded-full"
-          style="
-            background: radial-gradient(
-              circle,
-              rgba(160, 110, 10, 0.07) 0%,
-              transparent 60%
-            );
-            animation: float-up 9s ease-in-out infinite;
-          "
-        ></div>
+        <div class="env-top-glow"></div>
 
-        <!-- Quầng sáng phụ góc dưới -->
-        <div
-          class="absolute -bottom-36 right-1/4 w-[480px] h-[480px] rounded-full"
-          style="
-            background: radial-gradient(
-              circle,
-              rgba(140, 100, 5, 0.06) 0%,
-              transparent 60%
-            );
-            animation: float-up 11s ease-in-out infinite reverse;
-          "
-        ></div>
+        <div class="env-bottom-glow"></div>
 
         <!-- Vòng trang trí xoay -->
+
         <div class="absolute inset-0 flex items-center justify-center">
           <div
-            class="w-[700px] h-[700px] rounded-full spin-anim"
-            style="border: 1px solid rgba(212, 175, 55, 0.06)"
+            class="w-[700px] h-[700px] rounded-full spin-anim env-ring-1"
           ></div>
+
           <div
-            class="absolute w-[520px] h-[520px] rounded-full spin-rev"
-            style="border: 1px solid rgba(212, 175, 55, 0.05)"
+            class="absolute w-[520px] h-[520px] rounded-full spin-rev env-ring-2"
           ></div>
+
           <div
-            class="absolute w-[340px] h-[340px] rounded-full spin-anim"
-            style="
-              border: 1px dashed rgba(212, 175, 55, 0.04);
-              animation-duration: 22s;
-            "
+            class="absolute w-[340px] h-[340px] rounded-full spin-anim env-ring-3"
           ></div>
         </div>
 
         <!-- Hạt sáng bay -->
-        <div
-          style="
-            position: absolute;
-            top: 12%;
-            left: 8%;
-            width: 4px;
-            height: 4px;
-            background: #d4af37;
-            border-radius: 50%;
-            opacity: 0.28;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-            animation: float-up 5s ease-in-out infinite;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 18%;
-            right: 12%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            border-radius: 50%;
-            opacity: 0.22;
-            box-shadow: 0 0 7px rgba(251, 191, 36, 0.4);
-            animation: float-up 6.5s ease-in-out infinite 1s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            bottom: 18%;
-            left: 15%;
-            width: 3px;
-            height: 3px;
-            background: #fde68a;
-            border-radius: 50%;
-            opacity: 0.2;
-            box-shadow: 0 0 7px rgba(253, 230, 138, 0.35);
-            animation: float-up 7s ease-in-out infinite 2s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            bottom: 25%;
-            right: 10%;
-            width: 4px;
-            height: 4px;
-            background: #d4af37;
-            border-radius: 50%;
-            opacity: 0.25;
-            box-shadow: 0 0 9px rgba(212, 175, 55, 0.45);
-            animation: float-up 5.5s ease-in-out infinite 0.7s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 45%;
-            left: 5%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            border-radius: 50%;
-            opacity: 0.18;
-            box-shadow: 0 0 5px rgba(251, 191, 36, 0.3);
-            animation: float-up 8s ease-in-out infinite 3s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 55%;
-            right: 6%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            border-radius: 50%;
-            opacity: 0.2;
-            box-shadow: 0 0 6px rgba(212, 175, 55, 0.35);
-            animation: float-up 6s ease-in-out infinite 1.5s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 75%;
-            left: 30%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            border-radius: 50%;
-            opacity: 0.15;
-            box-shadow: 0 0 5px rgba(253, 230, 138, 0.3);
-            animation: float-up 9s ease-in-out infinite 4s;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 30%;
-            right: 30%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            border-radius: 50%;
-            opacity: 0.2;
-            box-shadow: 0 0 6px rgba(251, 191, 36, 0.35);
-            animation: float-up 7.5s ease-in-out infinite 2.5s;
-          "
-        ></div>
+
+        <div class="particle-spark env-p-1"></div>
+
+        <div class="particle-spark env-p-2"></div>
+
+        <div class="particle-spark env-p-3"></div>
+
+        <div class="particle-spark env-p-4"></div>
+
+        <div class="particle-spark env-p-5"></div>
+
+        <div class="particle-spark env-p-6"></div>
+
+        <div class="particle-spark env-p-7"></div>
+
+        <div class="particle-spark env-p-8"></div>
 
         <!-- Đường chéo sáng -->
-        <div
-          style="
-            position: absolute;
-            top: 0;
-            left: 22%;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(
-              to bottom,
-              transparent 0%,
-              rgba(212, 175, 55, 0.04) 35%,
-              rgba(212, 175, 55, 0.09) 50%,
-              rgba(212, 175, 55, 0.04) 65%,
-              transparent 100%
-            );
-            transform: rotate(18deg);
-            transform-origin: top center;
-          "
-        ></div>
-        <div
-          style="
-            position: absolute;
-            top: 0;
-            right: 20%;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(
-              to bottom,
-              transparent 0%,
-              rgba(212, 175, 55, 0.03) 40%,
-              rgba(212, 175, 55, 0.07) 55%,
-              rgba(212, 175, 55, 0.03) 70%,
-              transparent 100%
-            );
-            transform: rotate(-14deg);
-            transform-origin: top center;
-          "
-        ></div>
 
-        <!-- Ký hiệu ✦ trang trí bay -->
-        <div
-          style="
-            position: absolute;
-            top: 8%;
-            left: 18%;
-            font-size: 10px;
-            color: rgba(212, 175, 55, 0.12);
-            animation: float-up 6s ease-in-out infinite;
-          "
-        >
-          ✦
-        </div>
-        <div
-          style="
-            position: absolute;
-            bottom: 12%;
-            right: 16%;
-            font-size: 14px;
-            color: rgba(212, 175, 55, 0.1);
-            animation: float-up 8s ease-in-out infinite reverse;
-          "
-        >
-          ✦
-        </div>
-        <div
-          style="
-            position: absolute;
-            top: 35%;
-            left: 6%;
-            font-size: 8px;
-            color: rgba(212, 175, 55, 0.09);
-            animation: float-up 7s ease-in-out infinite 2s;
-          "
-        >
-          ✦
-        </div>
-        <div
-          style="
-            position: absolute;
-            bottom: 30%;
-            right: 8%;
-            font-size: 11px;
-            color: rgba(212, 175, 55, 0.08);
-            animation: float-up 9s ease-in-out infinite 1s;
-          "
-        >
-          ✦
-        </div>
+        <div class="diagonal-line env-d-1"></div>
+
+        <div class="diagonal-line env-d-2"></div>
+
+        <!-- Ký hiệu ✦ trang trí -->
+
+        <div class="decor-star env-star-1">✦</div>
+
+        <div class="decor-star env-star-2">✦</div>
+
+        <div class="decor-star env-star-3">✦</div>
+
+        <div class="decor-star env-star-4">✦</div>
       </div>
 
-      <!-- ── KHUNG VÀNG + HẠT BỤI TRÁI ── -->
+      <!-- KHUNG VÀNG + HẠT BỤI TRÁI -->
+
       <div class="side-frame left">
         <div class="side-frame-line"></div>
+
         <div class="side-frame-line-inner"></div>
+
         <div class="side-frame-corner top"></div>
+
         <div class="side-frame-corner bottom"></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 18px;
-            bottom: 3%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            box-shadow:
-              0 0 8px #d4af37,
-              0 0 16px rgba(212, 175, 55, 0.5);
-            animation-duration: 5.5s;
-            animation-delay: 0s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 25px;
-            bottom: 14%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 6px #fde68a,
-              0 0 12px rgba(253, 230, 138, 0.4);
-            animation-duration: 7s;
-            animation-delay: 1s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 20px;
-            bottom: 25%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 8px #fbbf24,
-              0 0 16px rgba(251, 191, 36, 0.45);
-            animation-duration: 6s;
-            animation-delay: 1.8s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 27px;
-            bottom: 38%;
-            width: 2px;
-            height: 2px;
-            background: #d4af37;
-            box-shadow:
-              0 0 6px #d4af37,
-              0 0 12px rgba(212, 175, 55, 0.35);
-            animation-duration: 8s;
-            animation-delay: 2.5s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 16px;
-            bottom: 50%;
-            width: 3px;
-            height: 3px;
-            background: #fde68a;
-            box-shadow:
-              0 0 8px #fde68a,
-              0 0 16px rgba(253, 230, 138, 0.5);
-            animation-duration: 5s;
-            animation-delay: 3.2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 23px;
-            bottom: 62%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 6px #fbbf24,
-              0 0 12px rgba(251, 191, 36, 0.35);
-            animation-duration: 7.5s;
-            animation-delay: 4s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 19px;
-            bottom: 74%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            box-shadow:
-              0 0 8px #d4af37,
-              0 0 16px rgba(212, 175, 55, 0.5);
-            animation-duration: 6.5s;
-            animation-delay: 0.6s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 26px;
-            bottom: 86%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 5px #fde68a,
-              0 0 10px rgba(253, 230, 138, 0.35);
-            animation-duration: 5.5s;
-            animation-delay: 2.2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            left: 21px;
-            bottom: 95%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 5px #fbbf24,
-              0 0 10px rgba(251, 191, 36, 0.3);
-            animation-duration: 6s;
-            animation-delay: 3.8s;
-          "
-        ></div>
+
+        <div class="dust-particle env-dust-l-1"></div>
+
+        <div class="dust-particle env-dust-l-2"></div>
+
+        <div class="dust-particle env-dust-l-3"></div>
+
+        <div class="dust-particle env-dust-l-4"></div>
+
+        <div class="dust-particle env-dust-l-5"></div>
+
+        <div class="dust-particle env-dust-l-6"></div>
+
+        <div class="dust-particle env-dust-l-7"></div>
+
+        <div class="dust-particle env-dust-l-8"></div>
+
+        <div class="dust-particle env-dust-l-9"></div>
       </div>
 
-      <!-- ── KHUNG VÀNG + HẠT BỤI PHẢI ── -->
+      <!-- KHUNG VÀNG + HẠT BỤI PHẢI -->
+
       <div class="side-frame right">
         <div class="side-frame-line"></div>
+
         <div class="side-frame-line-inner"></div>
+
         <div class="side-frame-corner top"></div>
+
         <div class="side-frame-corner bottom"></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 18px;
-            bottom: 6%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 8px #fbbf24,
-              0 0 16px rgba(251, 191, 36, 0.5);
-            animation-duration: 6s;
-            animation-delay: 0.4s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 25px;
-            bottom: 16%;
-            width: 2px;
-            height: 2px;
-            background: #d4af37;
-            box-shadow:
-              0 0 6px #d4af37,
-              0 0 12px rgba(212, 175, 55, 0.4);
-            animation-duration: 7.5s;
-            animation-delay: 1.3s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 20px;
-            bottom: 28%;
-            width: 3px;
-            height: 3px;
-            background: #fde68a;
-            box-shadow:
-              0 0 8px #fde68a,
-              0 0 16px rgba(253, 230, 138, 0.45);
-            animation-duration: 5s;
-            animation-delay: 2.1s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 27px;
-            bottom: 40%;
-            width: 2px;
-            height: 2px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 6px #fbbf24,
-              0 0 12px rgba(251, 191, 36, 0.35);
-            animation-duration: 8s;
-            animation-delay: 2.8s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 16px;
-            bottom: 52%;
-            width: 3px;
-            height: 3px;
-            background: #d4af37;
-            box-shadow:
-              0 0 8px #d4af37,
-              0 0 16px rgba(212, 175, 55, 0.5);
-            animation-duration: 6.5s;
-            animation-delay: 3.5s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 23px;
-            bottom: 64%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 6px #fde68a,
-              0 0 12px rgba(253, 230, 138, 0.35);
-            animation-duration: 7s;
-            animation-delay: 4.2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 19px;
-            bottom: 76%;
-            width: 3px;
-            height: 3px;
-            background: #fbbf24;
-            box-shadow:
-              0 0 8px #fbbf24,
-              0 0 16px rgba(251, 191, 36, 0.45);
-            animation-duration: 5.5s;
-            animation-delay: 0.8s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 26px;
-            bottom: 88%;
-            width: 2px;
-            height: 2px;
-            background: #d4af37;
-            box-shadow:
-              0 0 5px #d4af37,
-              0 0 10px rgba(212, 175, 55, 0.35);
-            animation-duration: 6s;
-            animation-delay: 2s;
-          "
-        ></div>
-        <div
-          class="dust-particle"
-          style="
-            right: 21px;
-            bottom: 96%;
-            width: 2px;
-            height: 2px;
-            background: #fde68a;
-            box-shadow:
-              0 0 5px #fde68a,
-              0 0 10px rgba(253, 230, 138, 0.3);
-            animation-duration: 7s;
-            animation-delay: 3.5s;
-          "
-        ></div>
+
+        <div class="dust-particle env-dust-r-1"></div>
+
+        <div class="dust-particle env-dust-r-2"></div>
+
+        <div class="dust-particle env-dust-r-3"></div>
+
+        <div class="dust-particle env-dust-r-4"></div>
+
+        <div class="dust-particle env-dust-r-5"></div>
+
+        <div class="dust-particle env-dust-r-6"></div>
+
+        <div class="dust-particle env-dust-r-7"></div>
+
+        <div class="dust-particle env-dust-r-8"></div>
+
+        <div class="dust-particle env-dust-r-9"></div>
       </div>
 
       <!-- PHONG BÌ -->
+
       <div
         id="envelope-wrapper"
         class="relative transition-all duration-700 z-10"
       >
         <div class="envelope-body">
-          <!-- Nắp phong bì -->
           <div id="env-flap" class="env-flap"></div>
 
-          <!-- Nếp gấp -->
           <div class="env-fold-left"></div>
+
           <div class="env-fold-right"></div>
+
           <div class="env-fold-bottom"></div>
 
-          <!-- Viền trong -->
           <div class="env-inner-border"></div>
 
-          <!-- Góc trang trí -->
           <div class="env-corner tl"></div>
+
           <div class="env-corner tr"></div>
+
           <div class="env-corner bl"></div>
+
           <div class="env-corner br"></div>
 
-          <!-- Nội dung bên trong phong bì – layout 3 vùng rõ ràng -->
-          <div
-            class="relative z-20 flex flex-col"
-            style="min-height: 320px; padding: 0"
-          >
-            <!-- ── VÙNG 1: HÀNG TRÊN (Người gửi ←→ Tem thư) ── -->
-            <!-- Vùng này nằm bên dưới nắp phong bì (height 155px) -->
-            <div
-              style="
-                height: 160px;
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-                padding: 0 22px 14px 22px;
-              "
-            >
-              <!-- Người gửi (góc trái) -->
-              <div style="text-align: left">
-                <p
-                  style="
-                    font-size: 8.5px;
-                    color: rgba(212, 175, 55, 0.45);
-                    font-family: &quot;Cinzel&quot;, serif;
-                    letter-spacing: 0.18em;
-                    text-transform: uppercase;
-                    margin: 0;
-                  "
-                >
-                  Người gửi
-                </p>
-                <p
-                  style="
-                    font-size: 12.5px;
-                    color: rgba(212, 175, 55, 0.88);
-                    font-family: &quot;Playfair Display&quot;, serif;
-                    font-weight: 700;
-                    margin-top: 4px;
-                    white-space: nowrap;
-                    line-height: 1.2;
-                  "
-                >
-                  Lê Thành Vinh
-                </p>
-                <p
-                  style="
-                    font-size: 8.5px;
-                    color: rgba(212, 175, 55, 0.42);
-                    margin-top: 3px;
-                    white-space: nowrap;
-                  "
-                >
-                  ĐH Công Nghệ Đồng Nai
-                </p>
+          <div class="relative z-20 flex flex-col env-content-box">
+            <!-- VÙNG 1: HÀNG TRÊN (Người gửi ←→ Tem thư) -->
+
+            <div class="env-row-top">
+              <div class="text-left">
+                <p class="env-sender-label">Người gửi</p>
+
+                <p class="env-sender-name">Lê Thành Vinh</p>
+
+                <p class="env-sender-school">ĐH Công Nghệ Đồng Nai</p>
               </div>
 
-              <!-- Tem thư (góc phải) -->
-              <div
-                style="
-                  width: 52px;
-                  height: 66px;
-                  background: linear-gradient(135deg, #1a0e00, #261500);
-                  border: 1.5px solid rgba(212, 175, 55, 0.48);
-                  border-radius: 2px;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 3px;
-                  outline: 1.5px dashed rgba(212, 175, 55, 0.3);
-                  outline-offset: 4px;
-                  box-shadow:
-                    2px 2px 0 2px #0e0800,
-                    -2px -2px 0 2px #0e0800,
-                    2px -2px 0 2px #0e0800,
-                    -2px 2px 0 2px #0e0800;
-                  flex-shrink: 0;
-                "
-              >
-                <span style="font-size: 22px; line-height: 1">🎓</span>
-                <span
-                  style="
-                    font-size: 5.5px;
-                    color: rgba(212, 175, 55, 0.72);
-                    font-family: &quot;Cinzel&quot;, serif;
-                    letter-spacing: 0.05em;
-                    line-height: 1.5;
-                    text-align: center;
-                  "
-                  >VIỆT NAM<br />2026</span
-                >
+              <div class="stamp-box">
+                <span class="stamp-emoji">🎓</span>
+
+                <span class="stamp-text">VIỆT NAM<br />2026</span>
               </div>
             </div>
 
-            <!-- ── ĐƯỜNG KẺ PHÂN CÁCH ── -->
-            <div
-              style="
-                height: 1px;
-                background: linear-gradient(
-                  to right,
-                  transparent,
-                  rgba(212, 175, 55, 0.2),
-                  transparent
-                );
-                margin: 0 18px;
-              "
-            ></div>
+            <div class="env-divider"></div>
 
-            <!-- ── VÙNG 2: KÍNH GỬI (trung tâm) ── -->
-            <div
-              style="
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 18px 28px 10px;
-              "
-            >
-              <p
-                style="
-                  font-size: 9.5px;
-                  color: rgba(212, 175, 55, 0.55);
-                  font-family: &quot;Cinzel&quot;, serif;
-                  letter-spacing: 0.28em;
-                  text-transform: uppercase;
-                  margin: 0 0 10px 0;
-                "
-              >
-                ✦ Kính gửi ✦
-              </p>
-              <div
-                style="
-                  width: 100%;
-                  max-width: 380px;
-                  background: rgba(212, 175, 55, 0.055);
-                  border: 1px solid rgba(212, 175, 55, 0.2);
-                  border-radius: 12px;
-                  padding: 14px 22px;
-                  text-align: center;
-                "
-              >
+            <!-- VÙNG 2: KÍNH GỬI (trung tâm) -->
+
+            <div class="env-row-center">
+              <p class="env-to-label">✦ Kính gửi ✦</p>
+
+              <div class="env-guest-box">
                 <p
                   id="envelope-guest-name"
-                  class="font-playfair font-bold"
-                  style="
-                    font-size: 1.5rem;
-                    color: #fde68a;
-                    text-shadow:
-                      0 0 20px rgba(253, 230, 138, 0.55),
-                      0 0 50px rgba(212, 175, 55, 0.35);
-                    line-height: 1.45;
-                    min-height: 1.8em;
-                    margin: 0;
-                  "
+                  class="font-playfair font-bold env-guest-name"
                 ></p>
               </div>
-              <!-- Dòng kẻ địa chỉ trang trí -->
-              <div
-                style="
-                  height: 1px;
-                  background: rgba(212, 175, 55, 0.15);
-                  margin: 12px auto 0;
-                  width: 75%;
-                  border-radius: 1px;
-                "
-              ></div>
-              <div
-                style="
-                  height: 1px;
-                  background: rgba(212, 175, 55, 0.1);
-                  margin: 7px auto 0;
-                  width: 52%;
-                  border-radius: 1px;
-                "
-              ></div>
+
+              <div class="env-line-1"></div>
+
+              <div class="env-line-2"></div>
             </div>
 
-            <!-- ── VÙNG 3: CHÚ THÍCH DƯỚI ── -->
-            <div style="padding: 10px 20px 18px; text-align: center">
-              <p
-                class="font-playfair"
-                style="
-                  font-size: 10.5px;
-                  font-style: italic;
-                  color: rgba(212, 175, 55, 0.38);
-                  margin: 0;
-                "
-              >
+            <!-- VÙNG 3: CHÚ THÍCH DƯỚI -->
+
+            <div class="env-row-bottom">
+              <p class="font-playfair env-quote">
                 "Khoảnh khắc trọng đại đang chờ bạn..."
               </p>
             </div>
@@ -3259,612 +511,194 @@
       </div>
 
       <!-- CON DẤU SÁP -->
+
       <div class="flex flex-col items-center gap-3 z-10">
         <button
           id="seal-btn"
           onclick="moPhongBi()"
           class="wax-seal seal-pulse w-24 h-24 rounded-full flex flex-col items-center justify-center"
         >
-          <i data-lucide="lock" class="w-7 h-7 mb-1" style="color: #fef3c7"></i>
-          <span
-            style="
-              font-size: 9px;
-              font-family: &quot;Cinzel&quot;, serif;
-              font-weight: 700;
-              letter-spacing: 0.1em;
-              color: #fef3c7;
-              text-transform: uppercase;
-            "
-            >Mở Thư</span
-          >
+          <i data-lucide="lock" class="w-7 h-7 mb-1 text-amber-100"></i>
+
+          <span class="wax-seal-text">Mở Thư</span>
         </button>
-        <p
-          class="font-playfair"
-          style="
-            font-size: 11.5px;
-            color: rgba(212, 175, 55, 0.42);
-            font-style: italic;
-          "
-        >
+
+        <p class="font-playfair wax-seal-sub">
           Nhấn vào con dấu sáp để mở bức thư tốt nghiệp
         </p>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════
-          THIỆP MỜI CHÍNH
-      ════════════════════════════════════════════════════════ -->
+    <!-- THIỆP MỜI CHÍNH -->
+
     <main
       id="main-card"
       class="opacity-0 relative z-10 max-w-[900px] mx-auto w-full px-4 py-12 sm:py-16"
     >
       <article class="glass-card rounded-[28px] overflow-hidden relative">
         <!-- Hạt sáng trang trí hai bên nội dung thư -->
+
         <div class="main-sparkles" aria-hidden="true">
           <div class="main-sparkles-side left">
-            <span
-              class="main-spark"
-              style="
-                --x: 22px;
-                --y: 10%;
-                --size: 4px;
-                --dur: 5.1s;
-                --delay: 0.2s;
-                --twinkle: 2.1s;
-                --drift: 5px;
-                --drift-end: -3px;
-              "
-            ></span>
-            <span
-              class="main-spark diamond"
-              style="
-                --x: 44px;
-                --y: 15%;
-                --size: 4px;
-                --dur: 6.4s;
-                --delay: 1.1s;
-                --twinkle: 2.6s;
-                --drift: -4px;
-                --drift-end: 3px;
-                --spark: #fde68a;
-                --glow: rgba(253, 230, 138, 0.92);
-                --halo: rgba(212, 175, 55, 0.42);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 30px;
-                --y: 21%;
-                --size: 2px;
-                --dur: 4.7s;
-                --delay: 2.2s;
-                --twinkle: 1.9s;
-                --drift: 7px;
-                --drift-end: -2px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 57px;
-                --y: 29%;
-                --size: 5px;
-                --dur: 7s;
-                --delay: 0.8s;
-                --twinkle: 2.8s;
-                --drift: -6px;
-                --drift-end: 2px;
-                --spark: #fff1b8;
-                --glow: rgba(255, 241, 184, 0.95);
-                --halo: rgba(245, 200, 70, 0.38);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 16px;
-                --y: 36%;
-                --size: 3px;
-                --dur: 5.7s;
-                --delay: 3.1s;
-                --twinkle: 2.2s;
-                --drift: 4px;
-                --drift-end: -4px;
-              "
-            ></span>
-            <span
-              class="main-spark diamond"
-              style="
-                --x: 39px;
-                --y: 43%;
-                --size: 3px;
-                --dur: 6.8s;
-                --delay: 1.7s;
-                --twinkle: 2.4s;
-                --drift: 6px;
-                --drift-end: -1px;
-                --spark: #fbbf24;
-                --glow: rgba(251, 191, 36, 0.9);
-                --halo: rgba(217, 119, 6, 0.38);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 63px;
-                --y: 49%;
-                --size: 4px;
-                --dur: 5.4s;
-                --delay: 2.7s;
-                --twinkle: 2s;
-                --drift: -5px;
-                --drift-end: 3px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 27px;
-                --y: 57%;
-                --size: 2px;
-                --dur: 4.9s;
-                --delay: 0.5s;
-                --twinkle: 1.8s;
-                --drift: 5px;
-                --drift-end: -3px;
-                --blur: 0.15px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 50px;
-                --y: 64%;
-                --size: 5px;
-                --dur: 6.1s;
-                --delay: 3.6s;
-                --twinkle: 2.7s;
-                --drift: -4px;
-                --drift-end: 2px;
-                --spark: #fde68a;
-                --glow: rgba(253, 230, 138, 0.92);
-                --halo: rgba(212, 175, 55, 0.4);
-              "
-            ></span>
-            <span
-              class="main-spark diamond"
-              style="
-                --x: 18px;
-                --y: 70%;
-                --size: 4px;
-                --dur: 7.2s;
-                --delay: 1.4s;
-                --twinkle: 2.9s;
-                --drift: 7px;
-                --drift-end: -2px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 42px;
-                --y: 77%;
-                --size: 3px;
-                --dur: 5.2s;
-                --delay: 2.5s;
-                --twinkle: 2.3s;
-                --drift: -6px;
-                --drift-end: 3px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 61px;
-                --y: 84%;
-                --size: 4px;
-                --dur: 6.6s;
-                --delay: 0.9s;
-                --twinkle: 2.5s;
-                --drift: 4px;
-                --drift-end: -3px;
-                --spark: #fff6cf;
-                --glow: rgba(255, 246, 207, 0.94);
-                --halo: rgba(245, 200, 70, 0.4);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 23px;
-                --y: 91%;
-                --size: 2px;
-                --dur: 4.6s;
-                --delay: 3.7s;
-                --twinkle: 1.7s;
-                --drift: -5px;
-                --drift-end: 2px;
-              "
-            ></span>
+            <span class="main-spark m-sp-l-1"></span>
+
+            <span class="main-spark diamond m-sp-l-2"></span>
+
+            <span class="main-spark m-sp-l-3"></span>
+
+            <span class="main-spark m-sp-l-4"></span>
+
+            <span class="main-spark m-sp-l-5"></span>
+
+            <span class="main-spark diamond m-sp-l-6"></span>
+
+            <span class="main-spark m-sp-l-7"></span>
+
+            <span class="main-spark m-sp-l-8"></span>
+
+            <span class="main-spark m-sp-l-9"></span>
+
+            <span class="main-spark diamond m-sp-l-10"></span>
+
+            <span class="main-spark m-sp-l-11"></span>
+
+            <span class="main-spark m-sp-l-12"></span>
+
+            <span class="main-spark m-sp-l-13"></span>
           </div>
 
           <div class="main-sparkles-side right">
-            <span
-              class="main-spark"
-              style="
-                --x: 66px;
-                --y: 8%;
-                --size: 4px;
-                --dur: 5.3s;
-                --delay: 0.6s;
-                --twinkle: 2.2s;
-                --drift: -5px;
-                --drift-end: 2px;
-              "
-            ></span>
-            <span
-              class="main-spark diamond"
-              style="
-                --x: 46px;
-                --y: 14%;
-                --size: 4px;
-                --dur: 6.2s;
-                --delay: 1.8s;
-                --twinkle: 2.6s;
-                --drift: 4px;
-                --drift-end: -3px;
-                --spark: #fde68a;
-                --glow: rgba(253, 230, 138, 0.92);
-                --halo: rgba(212, 175, 55, 0.42);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 30px;
-                --y: 20%;
-                --size: 2px;
-                --dur: 4.8s;
-                --delay: 2.6s;
-                --twinkle: 1.8s;
-                --drift: -6px;
-                --drift-end: 3px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 58px;
-                --y: 28%;
-                --size: 5px;
-                --dur: 7.1s;
-                --delay: 0.4s;
-                --twinkle: 2.9s;
-                --drift: 5px;
-                --drift-end: -2px;
-                --spark: #fff1b8;
-                --glow: rgba(255, 241, 184, 0.95);
-                --halo: rgba(245, 200, 70, 0.38);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 19px;
-                --y: 35%;
-                --size: 3px;
-                --dur: 5.6s;
-                --delay: 3.3s;
-                --twinkle: 2.1s;
-                --drift: -4px;
-                --drift-end: 3px;
-              "
-            ></span>
-            <span
-              class="main-spark diamond"
-              style="
-                --x: 43px;
-                --y: 42%;
-                --size: 3px;
-                --dur: 6.7s;
-                --delay: 1.2s;
-                --twinkle: 2.5s;
-                --drift: 6px;
-                --drift-end: -2px;
-                --spark: #fbbf24;
-                --glow: rgba(251, 191, 36, 0.9);
-                --halo: rgba(217, 119, 6, 0.38);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 70px;
-                --y: 48%;
-                --size: 4px;
-                --dur: 5s;
-                --delay: 2.1s;
-                --twinkle: 2s;
-                --drift: -5px;
-                --drift-end: 2px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 34px;
-                --y: 56%;
-                --size: 2px;
-                --dur: 4.7s;
-                --delay: 0.8s;
-                --twinkle: 1.7s;
-                --drift: 5px;
-                --drift-end: -2px;
-                --blur: 0.15px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 55px;
-                --y: 63%;
-                --size: 5px;
-                --dur: 6.3s;
-                --delay: 3.5s;
-                --twinkle: 2.8s;
-                --drift: -4px;
-                --drift-end: 2px;
-                --spark: #fde68a;
-                --glow: rgba(253, 230, 138, 0.92);
-                --halo: rgba(212, 175, 55, 0.4);
-              "
-            ></span>
-            <span
-              class="main-spark diamond"
-              style="
-                --x: 24px;
-                --y: 71%;
-                --size: 4px;
-                --dur: 7.3s;
-                --delay: 1.6s;
-                --twinkle: 2.9s;
-                --drift: 6px;
-                --drift-end: -3px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 48px;
-                --y: 78%;
-                --size: 3px;
-                --dur: 5.4s;
-                --delay: 2.7s;
-                --twinkle: 2.2s;
-                --drift: -6px;
-                --drift-end: 2px;
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 67px;
-                --y: 85%;
-                --size: 4px;
-                --dur: 6.5s;
-                --delay: 0.7s;
-                --twinkle: 2.4s;
-                --drift: 4px;
-                --drift-end: -2px;
-                --spark: #fff6cf;
-                --glow: rgba(255, 246, 207, 0.94);
-                --halo: rgba(245, 200, 70, 0.4);
-              "
-            ></span>
-            <span
-              class="main-spark"
-              style="
-                --x: 27px;
-                --y: 93%;
-                --size: 2px;
-                --dur: 4.5s;
-                --delay: 3.8s;
-                --twinkle: 1.8s;
-                --drift: -5px;
-                --drift-end: 3px;
-              "
-            ></span>
+            <span class="main-spark m-sp-r-1"></span>
+
+            <span class="main-spark diamond m-sp-r-2"></span>
+
+            <span class="main-spark m-sp-r-3"></span>
+
+            <span class="main-spark m-sp-r-4"></span>
+
+            <span class="main-spark m-sp-r-5"></span>
+
+            <span class="main-spark diamond m-sp-r-6"></span>
+
+            <span class="main-spark m-sp-r-7"></span>
+
+            <span class="main-spark m-sp-r-8"></span>
+
+            <span class="main-spark m-sp-r-9"></span>
+
+            <span class="main-spark diamond m-sp-r-10"></span>
+
+            <span class="main-spark m-sp-r-11"></span>
+
+            <span class="main-spark m-sp-r-12"></span>
+
+            <span class="main-spark m-sp-r-13"></span>
           </div>
         </div>
 
-        <!-- Ánh sáng trên/dưới thiệp -->
         <div
           class="glow-top absolute top-0 left-0 right-0 h-52 pointer-events-none"
         ></div>
+
         <div
           class="glow-bottom absolute bottom-0 left-0 right-0 h-52 pointer-events-none"
         ></div>
 
-        <!-- Viền góc thiệp -->
         <div class="card-corner tl"></div>
+
         <div class="card-corner tr"></div>
+
         <div class="card-corner bl"></div>
+
         <div class="card-corner br"></div>
 
         <div class="relative z-10 p-6 sm:p-12">
-          <!-- ─── ĐẦU THIỆP ─── -->
+          <!-- ĐẦU THIỆP -->
+
           <header class="text-center mb-10">
-            <!-- Ảnh đại diện -->
             <div class="relative inline-block mb-5">
               <div
-                class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-[3px] float-anim"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    #bf953f,
-                    #fcf6ba,
-                    #b38728,
-                    #fbf5b7,
-                    #aa771c
-                  );
-                  box-shadow:
-                    0 0 32px rgba(212, 175, 55, 0.45),
-                    0 0 70px rgba(212, 175, 55, 0.15);
-                "
+                class="w-32 h-32 sm:w-36 sm:h-36 rounded-full p-[3px] float-anim avatar-ring"
               >
                 <div
-                  class="w-full h-full rounded-full overflow-hidden"
-                  style="border: 2px solid rgba(0, 0, 0, 0.25)"
+                  class="w-full h-full rounded-full overflow-hidden avatar-inner"
                 >
                   <img
                     src="/img/zinh.png"
                     alt="Ảnh Kỹ Sư Lê Thành Vinh"
-                    class="w-full h-full object-cover"
-                    style="object-position: center 24%"
+                    class="w-full h-full object-cover avatar-img"
                   />
                 </div>
               </div>
-              <!-- Huy hiệu mũ tốt nghiệp -->
+
               <div
-                class="absolute -bottom-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center"
-                style="
-                  background: linear-gradient(135deg, #d97706, #fbbf24);
-                  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.55);
-                  border: 2px solid rgba(0, 0, 0, 0.28);
-                "
+                class="absolute -bottom-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center cap-badge"
               >
-                <i
-                  data-lucide="graduation-cap"
-                  class="w-5 h-5"
-                  style="color: #080400"
-                ></i>
+                <i data-lucide="graduation-cap" class="w-5 h-5 text-black"></i>
               </div>
             </div>
 
-            <!-- Nhãn tiêu đề -->
             <p class="sub-label mb-3">✦ Thư Mời Dự Lễ Tốt Nghiệp ✦</p>
 
-            <!-- Tiêu đề lớn -->
             <h1
-              class="font-cormorant font-bold gold-text mb-4 leading-tight"
-              style="
-                font-size: clamp(2rem, 10vw, 3rem);
-                line-height: 1.15;
-                font-weight: 700;
-                -webkit-text-size-adjust: 100%;
-                text-rendering: optimizeLegibility;
-              "
+              class="font-cormorant font-bold gold-text mb-4 leading-tight title-main"
             >
               LỄ TỐT NGHIỆP<br />
 
-              <span
-                style="
-                  font-family: &quot;Cinzel&quot;, serif;
-                  font-size: 0.48em;
-                  letter-spacing: 0.08em;
-                  opacity: 0.85;
-                  white-space: nowrap;
-                "
-              >
-                KỸ SƯ CÔNG NGHỆ THÔNG TIN
-              </span>
+              <span class="title-sub">KỸ SƯ CÔNG NGHỆ THÔNG TIN</span>
             </h1>
-            <!-- <h1 class="font-playfair font-bold gold-text mb-4 leading-tight"
-              style="font-size: clamp(1.75rem, 6vw, 3rem);">
-              LỄ TỐT NGHIỆP<br />
-              <span style="font-size:0.6em; letter-spacing:0.08em; opacity:0.85;">KỸ SƯ CÔNG NGHỆ THÔNG TIN</span>
-            </h1> -->
 
-            <!-- Đường kẻ trang trí -->
             <div class="divider-gold max-w-xs mx-auto">❧</div>
           </header>
 
-          <!-- ─── NỘI DUNG LỜI MỜI ─── -->
+          <!-- NỘI DUNG LỜI MỜI -->
+
           <section class="text-center mb-10">
             <div class="letter-frame rounded-2xl p-6 sm:p-8 mb-5">
-              <!-- Lời mời cá nhân hóa -->
               <p
-                class="font-cormorant font-semibold leading-relaxed mb-5"
-                style="
-                  color: #fde8a0;
-                  font-style: italic;
-                  font-size: clamp(1.05rem, 3.5vw, 1.3rem);
-                "
+                class="font-cormorant font-semibold leading-relaxed mb-5 letter-personalized"
               >
                 <span id="loi-moi-ca-nhan"></span>
               </p>
 
-              <div
-                style="
-                  height: 1px;
-                  background: linear-gradient(
-                    to right,
-                    transparent,
-                    rgba(212, 175, 55, 0.38),
-                    transparent
-                  );
-                  margin: 0 auto 20px;
-                  width: 80px;
-                "
-              ></div>
+              <div class="letter-divider"></div>
 
-              <!-- Đoạn văn giới thiệu -->
-              <p
-                class="leading-relaxed font-light"
-                style="
-                  color: rgba(240, 215, 170, 0.78);
-                  font-size: clamp(0.85rem, 2.5vw, 1rem);
-                "
-              >
+              <p class="leading-relaxed font-light letter-body">
                 Được đánh dấu bằng bao năm miệt mài trên giảng đường,
-                <span class="font-semibold" style="color: #fbbf24"
-                  >Lê Thành Vinh</span
-                >
+
+                <span class="font-semibold text-amber-400">Lê Thành Vinh</span>
+
                 nay trân trọng kính mời quý vị đến chung vui và chứng kiến lễ
                 tốt nghiệp — cột mốc ý nghĩa nhất trên hành trình học vấn.
               </p>
             </div>
 
             <!-- Thông tin học vấn -->
+
             <div class="credential-block">
               <div class="credential-top">
                 <span class="credential-diamond"></span>
+
                 <span>🎓 Kỹ Sư Công Nghệ Thông Tin</span>
+
                 <span class="credential-diamond"></span>
               </div>
+
               <div class="credential-bottom">
                 <i data-lucide="building-2"></i>
+
                 <span>Đại Học Công Nghệ Đồng Nai</span>
               </div>
             </div>
           </section>
 
-          <!-- ─── ĐỒNG HỒ ĐẾM NGƯỢC ─── -->
+          <!-- ĐỒNG HỒ ĐẾM NGƯỢC -->
+
           <section
-            class="mb-10 rounded-2xl p-6 text-center relative overflow-hidden"
-            style="
-              background: linear-gradient(
-                140deg,
-                rgba(22, 13, 2, 0.97) 0%,
-                rgba(12, 7, 1, 0.99) 100%
-              );
-              border: 1px solid rgba(212, 175, 55, 0.18);
-              box-shadow:
-                inset 0 1px 0 rgba(212, 175, 55, 0.1),
-                0 0 28px rgba(212, 175, 55, 0.05);
-            "
+            class="mb-10 rounded-2xl p-6 text-center relative overflow-hidden countdown-box"
           >
-            <!-- Chấm bi nền -->
             <div
-              class="absolute inset-0 opacity-[0.04] pointer-events-none"
-              style="
-                background-image: radial-gradient(
-                  rgba(212, 175, 55, 1) 1px,
-                  transparent 1px
-                );
-                background-size: 22px 22px;
-              "
+              class="absolute inset-0 opacity-[0.04] pointer-events-none countdown-dots"
             ></div>
 
             <p class="sub-label mb-5 relative z-10">
@@ -3880,109 +714,89 @@
                   class="text-2xl sm:text-3xl font-bold font-cinzel gold-bright block"
                   >00</span
                 >
-                <p class="sub-label mt-1" style="letter-spacing: 0.15em">
-                  Ngày
-                </p>
+
+                <p class="sub-label mt-1 cd-label">Ngày</p>
               </div>
+
               <div class="cd-cell p-3 sm:p-4 rounded-xl">
                 <span
                   id="cd-hours"
                   class="text-2xl sm:text-3xl font-bold font-cinzel gold-bright block"
                   >00</span
                 >
-                <p class="sub-label mt-1" style="letter-spacing: 0.15em">Giờ</p>
+
+                <p class="sub-label mt-1 cd-label">Giờ</p>
               </div>
+
               <div class="cd-cell p-3 sm:p-4 rounded-xl">
                 <span
                   id="cd-minutes"
                   class="text-2xl sm:text-3xl font-bold font-cinzel gold-bright block"
                   >00</span
                 >
-                <p class="sub-label mt-1" style="letter-spacing: 0.15em">
-                  Phút
-                </p>
+
+                <p class="sub-label mt-1 cd-label">Phút</p>
               </div>
+
               <div class="cd-cell p-3 sm:p-4 rounded-xl">
                 <span
                   id="cd-seconds"
                   class="text-2xl sm:text-3xl font-bold font-cinzel gold-bright block"
                   >00</span
                 >
-                <p class="sub-label mt-1" style="letter-spacing: 0.15em">
-                  Giây
-                </p>
+
+                <p class="sub-label mt-1 cd-label">Giây</p>
               </div>
             </div>
           </section>
 
-          <!-- ─── THỜI GIAN & ĐỊA ĐIỂM ─── -->
+          <!-- THỜI GIAN & ĐỊA ĐIỂM -->
+
           <section class="grid sm:grid-cols-2 gap-4 mb-10">
-            <!-- Thời gian -->
             <div
               class="info-box p-6 rounded-2xl flex flex-col items-center text-center"
             >
-              <div
-                class="w-12 h-12 rounded-full flex items-center justify-center mb-3"
-                style="
-                  background: rgba(212, 175, 55, 0.09);
-                  border: 1px solid rgba(212, 175, 55, 0.28);
-                  box-shadow: 0 0 18px rgba(212, 175, 55, 0.09);
-                "
-              >
+              <div class="info-icon-box mb-3">
                 <i
                   data-lucide="calendar-days"
-                  class="w-5 h-5"
-                  style="color: #fbbf24"
+                  class="w-5 h-5 text-amber-400"
                 ></i>
               </div>
+
               <h4 class="sub-label mb-3">Thời Gian</h4>
-              <p
-                class="font-playfair font-bold gold-bright mb-1"
-                style="font-size: 1.35rem"
-              >
+
+              <p class="font-playfair font-bold gold-bright mb-1 text-2xl">
                 11 giờ 30 phút
               </p>
-              <p class="text-sm font-semibold" style="color: #fbbf24">
+
+              <p class="text-sm font-semibold text-amber-400">
                 Thứ Bảy, ngày 03 tháng 10 năm 2026
               </p>
             </div>
 
-            <!-- Địa điểm -->
             <div
               class="info-box p-6 rounded-2xl flex flex-col items-center text-center"
             >
-              <div
-                class="w-12 h-12 rounded-full flex items-center justify-center mb-3"
-                style="
-                  background: rgba(212, 175, 55, 0.09);
-                  border: 1px solid rgba(212, 175, 55, 0.28);
-                  box-shadow: 0 0 18px rgba(212, 175, 55, 0.09);
-                "
-              >
-                <i
-                  data-lucide="map-pin"
-                  class="w-5 h-5"
-                  style="color: #fbbf24"
-                ></i>
+              <div class="info-icon-box mb-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-amber-400"></i>
               </div>
+
               <h4 class="sub-label mb-3">Địa Điểm</h4>
-              <p
-                class="font-playfair font-bold gold-bright mb-1"
-                style="font-size: 1.1rem"
-              >
+
+              <p class="font-playfair font-bold gold-bright mb-1 text-lg">
                 Hội trường Khu G
               </p>
-              <p
-                class="text-sm leading-relaxed"
-                style="color: rgba(240, 215, 170, 0.68)"
-              >
+
+              <p class="text-sm leading-relaxed text-amber-100/70">
                 Trường Đại học Công Nghệ Đồng Nai<br />
+
                 Phường Trảng Dài, Thành phố Biên Hòa
               </p>
             </div>
           </section>
 
-          <!-- ─── NÚT LIÊN KẾT ─── -->
+          <!-- NÚT LIÊN KẾT -->
+
           <div class="flex flex-wrap gap-3 justify-center mb-10">
             <a
               href="https://maps.google.com/?q=Trường+Đại+Học+Công+Nghệ+Đồng+Nai"
@@ -3991,8 +805,10 @@
               class="btn-outline px-5 py-2.5 rounded-xl text-sm font-medium"
             >
               <i data-lucide="navigation" class="w-4 h-4"></i>
+
               Chỉ đường Google Maps
             </a>
+
             <a
               href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lễ+Tốt+Nghiệp+Lê+Thành+Vinh&dates=20261003T013000Z/20261003T043000Z&details=Lễ+tốt+nghiệp+Kỹ+sư+CNTT+Lê+Thành+Vinh&location=Trường+Đại+Học+Công+Nghệ+Đồng+Nai"
               target="_blank"
@@ -4000,25 +816,92 @@
               class="btn-outline px-5 py-2.5 rounded-xl text-sm font-medium"
             >
               <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+
               Thêm vào Google Lịch
             </a>
           </div>
 
-          <!-- ─── XÁC NHẬN THAM DỰ ─── -->
+          <!-- =====================================================
+     TRUNG TÂM TỔ CHỨC SỰ KIỆN VÀ GIẢI TRÍ
+====================================================== -->
+
+          <section class="campus-event-section">
+            <div class="campus-event-header">
+              <span class="campus-event-line"></span>
+
+              <div class="campus-event-title-wrap">
+                <span class="campus-event-star">✦</span>
+
+                <h2>
+                  TRUNG TÂM TỔ CHỨC SỰ KIỆN
+                  <span>& GIẢI TRÍ</span>
+                </h2>
+
+                <span class="campus-event-star">✦</span>
+              </div>
+
+              <span class="campus-event-line"></span>
+            </div>
+
+            <p class="campus-event-description">
+              Thành Vinh hẹn mọi gnười ở đây nhoa 🥰
+            </p>
+
+            <div class="campus-event-card">
+              <div class="campus-event-image-wrap">
+                <img
+                  src="https://360campus.dntu.edu.vn/data/panos/s10/pano_f.jpg"
+                  alt="Trung tâm tổ chức sự kiện và giải trí - Trường Đại học Công Nghệ Đồng Nai"
+                  class="campus-event-image"
+                  loading="lazy"
+                />
+
+                <div class="campus-event-overlay"></div>
+
+                <div class="campus-event-location">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=Trường+Đại+Học+Công+Nghệ+Đồng+Nai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="campus-location-link"
+                  >
+                    <i data-lucide="map-pin"></i>
+
+                    <span> Trường Đại học Công Nghệ Đồng Nai </span>
+
+                    <i
+                      data-lucide="navigation"
+                      class="campus-navigation-icon"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="campus-event-info">
+                <div class="campus-event-info-icon">
+                  <i data-lucide="landmark"></i>
+                </div>
+
+                <div>
+                  <h3>Trung tâm tổ chức sự kiện và giải trí</h3>
+
+                  <p>
+                    Khu vực sân cỏ, mái che và sân khấu — nơi Thành Vinh cùng
+                    bạn bè lưu giữ những kỷ niệm đẹp trong những năm tháng đại
+                    học.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- XÁC NHẬN THAM DỰ -->
+
           <section class="rsvp-section rounded-2xl overflow-hidden">
-            <!-- Tiêu đề RSVP -->
             <div class="rsvp-header px-6 py-5 text-center">
-              <h3
-                class="font-playfair font-bold text-xl"
-                style="color: #fde8a0"
-              >
+              <h3 class="font-playfair font-bold text-xl text-gold-light">
                 GỬI XÁC NHẬN VÀ LỜI CHÚC MỪNG ĐẾN VINH NHA 😊
               </h3>
-              <!-- <p class="text-sm mt-1.5" style="color:rgba(212,175,55,0.5);">
-                Kính nhờ quý vị phản hồi trước ngày
-                <strong style="color:#fbbf24;">28 tháng 09 năm 2026</strong>
-                giúp<strong style="color:#fbbf24;">Thành Vinh</strong> nha 😘.
-              </p> -->
             </div>
 
             <div class="p-6 sm:p-8">
@@ -4027,12 +910,9 @@
                 onsubmit="guiXacNhan(event)"
                 class="space-y-4 max-w-md mx-auto"
               >
-                <select
-                  id="rsvp-attendance"
-                  class="gold-input"
-                  style="text-align: left; cursor: pointer"
-                >
+                <select id="rsvp-attendance" class="gold-input select-input">
                   <option value="co-mat">🎉 Tôi sẽ có mặt 🥰</option>
+
                   <option value="vang-mat">
                     😔 Rất tiếc không thể đến, xin gửi lời chúc từ xa
                   </option>
@@ -4043,20 +923,10 @@
                     id="rsvp-message"
                     rows="3"
                     placeholder="Gửi lời chúc mừng đến Thành Vinh... 🎊"
-                    class="gold-input resize-none"
-                    style="text-align: left; padding-bottom: 34px"
+                    class="gold-input resize-none rsvp-textarea"
                   ></textarea>
-                  <div
-                    id="rsvp-word-count"
-                    style="
-                      position: absolute;
-                      right: 14px;
-                      bottom: 10px;
-                      font-size: 11px;
-                      color: rgba(212, 175, 55, 0.5);
-                      pointer-events: none;
-                    "
-                  >
+
+                  <div id="rsvp-word-count" class="word-count-badge">
                     0/1000 từ
                   </div>
                 </div>
@@ -4072,34 +942,24 @@
 
               <div id="rsvp-thankyou" class="hidden text-center py-7 space-y-4">
                 <div
-                  class="w-14 h-14 mx-auto rounded-full flex items-center justify-center"
-                  style="
-                    background: rgba(16, 185, 129, 0.12);
-                    border: 1px solid rgba(16, 185, 129, 0.38);
-                    box-shadow: 0 0 22px rgba(16, 185, 129, 0.18);
-                  "
+                  class="w-14 h-14 mx-auto rounded-full flex items-center justify-center rsvp-success-icon"
                 >
                   <i
                     data-lucide="check-circle-2"
-                    class="w-7 h-7"
-                    style="color: #34d399"
+                    class="w-7 h-7 text-emerald-400"
                   ></i>
                 </div>
+
                 <div>
-                  <p
-                    class="font-playfair font-bold text-lg"
-                    style="color: #fde8a0"
-                  >
+                  <p class="font-playfair font-bold text-lg text-gold-light">
                     Cảm ơn bạn đã phản hồi!
                   </p>
-                  <p
-                    class="text-sm mt-1"
-                    style="color: rgba(212, 175, 55, 0.5)"
-                  >
+
+                  <p class="text-sm mt-1 text-gold-sub">
                     Phản hồi của bạn đã được ghi nhận.<br />
-                    <span style="color: #fbbf24; font-weight: 600"
-                      >Thành Vinh</span
-                    >
+
+                    <span class="text-amber-400 font-semibold">Thành Vinh</span>
+
                     rất mong được đón tiếp bạn!
                   </p>
                 </div>
@@ -4107,19 +967,104 @@
             </div>
           </section>
 
-          <!-- ─── CHỮ KÝ ─── -->
-          <footer
-            class="mt-10 pt-8 text-center"
-            style="border-top: 1px solid rgba(212, 175, 55, 0.14)"
-          >
+          <!-- ─── THÔNG TIN LIÊN HỆ ─── -->
+
+          <section class="contact-section">
+            <h3 class="contact-title">Thông tin liên hệ</h3>
+
+            <div class="contact-content">
+              <!-- QR ZALO -->
+
+              <div class="contact-qr-wrapper">
+                <div>
+                  <img
+                    src="/img/zalo.png"
+                    alt="QR Code Zalo - Thành Vinh"
+                    class="contact-qr"
+                  />
+
+                  <p class="contact-qr-note">Quét mã để kết nối Zalo</p>
+                </div>
+              </div>
+
+              <!-- THÔNG TIN LIÊN HỆ -->
+
+              <div class="contact-info">
+                <!-- SỐ ĐIỆN THOẠI -->
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i data-lucide="phone"></i>
+                  </div>
+
+                  <div>
+                    <div class="contact-label">Số điện thoại</div>
+
+                    <div class="contact-value">
+                      <a href="tel:0940156340"> 0941.056.340 </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- INSTAGRAM -->
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </div>
+
+                  <div>
+                    <div class="contact-label">Instagram</div>
+
+                    <div class="contact-value">
+                      <a
+                        href="https://www.instagram.com/zinh_dev/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        @zinh_dev
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FACEBOOK -->
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </div>
+
+                  <div>
+                    <div class="contact-label">Facebook</div>
+
+                    <div class="contact-value">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61593117209576"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Lê Thành Vinh
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CHỮ KÝ -->
+
+          <footer class="mt-10 pt-8 text-center footer-border">
             <p class="sub-label mb-3">Trân trọng,</p>
+
             <p
-              class="font-playfair font-bold gold-text whitespace-nowrap"
-              style="font-size: clamp(1.6rem, 5vw, 2.2rem)"
+              class="font-playfair font-bold gold-text whitespace-nowrap footer-name"
             >
               Lê Thành Vinh
             </p>
-            <p class="sub-label mt-2" style="letter-spacing: 0.2em">
+
+            <p class="sub-label mt-2 footer-sub">
               ✦ Kỹ Sư CNTT · Khóa 2021–2026 ✦
             </p>
           </footer>
@@ -4127,511 +1072,8 @@
       </article>
     </main>
 
-    <!-- ═══════════════════════════════════════════════════════
-          JAVASCRIPT
-      ════════════════════════════════════════════════════════ -->
-    <script>
-      "use strict";
+    <!-- Custom Script -->
 
-      let danhXung = "";
-      let tenKhach = "";
-      let nhacDangPhat = false;
-
-      // ── KHỞI CHẠY ──
-      document.addEventListener("DOMContentLoaded", () => {
-        lucide.createIcons();
-        kiemTraRSVP();
-        demNguoc();
-        hatBuiVang();
-
-        // Giới hạn lời chúc tối đa 1000 từ
-        const loiChucInput = document.getElementById("rsvp-message");
-        if (loiChucInput) {
-          loiChucInput.addEventListener("input", gioiHanLoiChuc);
-          gioiHanLoiChuc();
-        }
-
-        // Cho phép nhấn Enter trong ô nhập tên để thực hiện
-        // đúng chức năng như khi click nút "Mở Thư".
-        const guestNameInput = document.getElementById("guest-name-input");
-        if (guestNameInput) {
-          guestNameInput.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-              event.preventDefault();
-              batDauPhongBi();
-            }
-          });
-        }
-      });
-
-      // ── BƯỚC 1: CHỌN DANH XƯNG ──
-      function chonDanhXung(ten) {
-        danhXung = ten;
-        const badge = document.getElementById("danh-xung-badge");
-        badge.textContent = ten;
-        if (ten === "Baby") {
-          Object.assign(badge.style, {
-            background: "rgba(236,72,153,0.18)",
-            color: "#f9a8d4",
-            borderColor: "rgba(236,72,153,0.4)",
-          });
-        } else {
-          Object.assign(badge.style, {
-            background: "rgba(212,175,55,0.14)",
-            color: "#fbbf24",
-            borderColor: "rgba(212,175,55,0.3)",
-          });
-        }
-        chuyen(2);
-      }
-
-      function chuyen(buoc) {
-        const s1 = document.getElementById("modal-step-1");
-        const s2 = document.getElementById("modal-step-2");
-        const d1 = document.getElementById("step-dot-1");
-        const d2 = document.getElementById("step-dot-2");
-        if (buoc === 1) {
-          s1.classList.remove("hidden");
-          s2.classList.add("hidden");
-          d1.style.cssText =
-            "background:#d4af37; box-shadow:0 0 8px rgba(212,175,55,0.6); width:10px; height:10px; border-radius:50%;";
-          d2.style.cssText =
-            "background:#1f2937; width:10px; height:10px; border-radius:50%;";
-        } else {
-          s1.classList.add("hidden");
-          s2.classList.remove("hidden");
-          d1.style.cssText =
-            "background:#1f2937; width:10px; height:10px; border-radius:50%;";
-          d2.style.cssText =
-            "background:#d4af37; box-shadow:0 0 8px rgba(212,175,55,0.6); width:10px; height:10px; border-radius:50%;";
-          setTimeout(
-            () => document.getElementById("guest-name-input").focus(),
-            80,
-          );
-        }
-      }
-
-      // ── XÓA LỖI KHI NGƯỜI DÙNG BẮT ĐẦU GÕ ──
-      function xoaLoi() {
-        const input = document.getElementById("guest-name-input");
-        const errorMsg = document.getElementById("name-error-msg");
-        if (input.value.trim()) {
-          errorMsg.style.display = "none";
-          input.style.borderColor = "";
-          input.style.boxShadow = "";
-        }
-      }
-
-      function quayLaiBuoc1() {
-        chuyen(1);
-      }
-
-      // ── CHUYỂN CẢNH CINEMATIC 3D – NHẸ GPU ──
-      function chuyenTrangCinematic(fromEl, toEl, enterClass, duration = 700) {
-        if (!fromEl || !toEl) return;
-
-        const fx = document.getElementById("page-transition-fx");
-        const reduceMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
-
-        // Đảm bảo viewport luôn ở đầu khi đổi màn hình.
-        if (window.scrollY !== 0) {
-          window.scrollTo(0, 0);
-        }
-
-        document.body.classList.add("is-transitioning");
-        window.pauseGoldParticles?.();
-
-        fromEl.classList.remove("cinematic-out");
-        toEl.classList.remove("cinematic-in", "cinematic-envelope-in");
-        toEl.classList.remove("hidden", "opacity-0");
-
-        // Chỉ ép layout 1 lần để khởi động animation, tránh reflow liên tục.
-        void fromEl.offsetWidth;
-
-        requestAnimationFrame(() => {
-          fromEl.classList.add("cinematic-out");
-          toEl.classList.add(enterClass);
-
-          fx.classList.remove("play");
-          void fx.offsetWidth;
-          fx.classList.add("play");
-        });
-
-        setTimeout(() => {
-          fromEl.classList.add("hidden");
-          fromEl.classList.remove("cinematic-out");
-          toEl.classList.remove(enterClass);
-          fx.classList.remove("play");
-
-          document.body.classList.remove("is-transitioning");
-          if (!reduceMotion) {
-            window.resumeGoldParticles?.();
-          }
-        }, duration);
-      }
-
-      // ── BƯỚC 2: MỞ PHONG BÌ ──
-      function batDauPhongBi() {
-        const input = document.getElementById("guest-name-input");
-        const errorMsg = document.getElementById("name-error-msg");
-        tenKhach = input.value.trim();
-
-        // ── BẮT BUỘC PHẢI NHẬP TÊN ──
-        if (!tenKhach) {
-          // Hiện thông báo lỗi
-          errorMsg.style.display = "flex";
-          // Đổi viền đỏ
-          input.style.borderColor = "rgba(239,68,68,0.7)";
-          input.style.boxShadow =
-            "0 0 0 3px rgba(239,68,68,0.15), 0 0 14px rgba(239,68,68,0.2)";
-          // Hiệu ứng rung
-          input.classList.remove("shake-anim");
-          void input.offsetWidth; // reset animation
-          input.classList.add("shake-anim");
-          input.focus();
-          return; // Dừng lại, không mở phong bì
-        }
-
-        // Ẩn lỗi nếu đã nhập
-        errorMsg.style.display = "none";
-        input.style.borderColor = "";
-        input.style.boxShadow = "";
-
-        const guestModal = document.getElementById("guest-modal");
-        const envelopeScreen = document.getElementById("envelope-screen");
-
-        // Chuyển từ trang nhập thông tin → phong bì bằng hiệu ứng 3D.
-        chuyenTrangCinematic(
-          guestModal,
-          envelopeScreen,
-          "cinematic-envelope-in",
-          950,
-        );
-
-        // Hiển thị tên lên phong bì
-        const ten =
-          danhXung === "Gia đình"
-            ? "Gia đình " + tenKhach
-            : `${danhXung} ${tenKhach}`;
-        document.getElementById("envelope-guest-name").textContent = ten;
-
-        // Hiệu ứng phong bì bay vào
-        const wrap = document.getElementById("envelope-wrapper");
-        wrap.style.cssText =
-          "opacity:0; transform:translateY(36px) scale(0.96);";
-        requestAnimationFrame(() => {
-          wrap.style.transition = "all 0.75s cubic-bezier(0.22,1,0.36,1)";
-          wrap.style.opacity = "1";
-          wrap.style.transform = "translateY(0) scale(1)";
-        });
-      }
-
-      // ── MỞ PHONG BÌ ──
-      function moPhongBi() {
-        const sealBtn = document.getElementById("seal-btn");
-        sealBtn.style.pointerEvents = "none";
-        sealBtn.style.opacity = "0.55";
-
-        // Lật nắp phong bì
-        document.getElementById("env-flap").classList.add("open");
-
-        // Bật nhạc ngay sau thao tác click của người dùng
-        const nhac = document.getElementById("bg-music");
-        nhac
-          .play()
-          .then(() => {
-            nhacDangPhat = true;
-            document.getElementById("music-toggle").classList.add("on");
-          })
-          .catch(() => {});
-
-        // Cài lời mời cá nhân
-        const loiMoi = document.getElementById("loi-moi-ca-nhan");
-        const ten = tenKhach ? `${danhXung} ${tenKhach}` : danhXung;
-
-        if (danhXung === "Baby") {
-          loiMoi.innerHTML = `Thân mời <span style="color:#f9a8d4; font-weight:700;">Baby ${tenKhach}</span> đến tham dự và chung vui cùng <span style="color:#fbbf24; font-weight:700; white-space:nowrap;">Lê Thành Vinh</span> trong ngày lễ tốt nghiệp đáng nhớ này! 🌸`;
-        } else if (danhXung === "Gia đình") {
-          loiMoi.innerHTML = `Trân trọng kính mời <span style="color:#fbbf24; font-weight:700;">Gia đình ${tenKhach}</span> đến tham dự lễ tốt nghiệp của <span style="color:#fbbf24; font-weight:700; white-space:nowrap;">Lê Thành Vinh</span>. Sự có mặt của quý gia đình là niềm vinh hạnh lớn lao. 🎓`;
-        } else {
-          loiMoi.innerHTML = `Trân trọng kính mời <span style="color:#fbbf24; font-weight:700;">${ten}</span> đến tham dự và chung vui cùng <span style="color:#fbbf24; font-weight:700; white-space:nowrap;">Lê Thành Vinh</span> trong ngày lễ tốt nghiệp trọng đại này! 🎓`;
-        }
-
-        // Thu phong bì bằng transform + opacity, không dùng filter blur.
-        const wrap = document.getElementById("envelope-wrapper");
-
-        // Giữ phong bì đủ lâu để người dùng nhìn thấy trọn animation mở nắp.
-        setTimeout(() => {
-          wrap.style.transition =
-            "transform 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease";
-          wrap.style.transform = "scale(0.975) translateZ(-8px)";
-          wrap.style.opacity = "0";
-        }, 1400);
-
-        // Chuyển sang thiệp chính sau khi nắp mở + phong bì thu lại.
-        setTimeout(() => {
-          const envelopeScreen = document.getElementById("envelope-screen");
-          const card = document.getElementById("main-card");
-
-          card.classList.remove("hidden", "opacity-0");
-          card.style.transform = "";
-
-          chuyenTrangCinematic(envelopeScreen, card, "cinematic-in", 700);
-
-          // Chỉ bắn pháo giấy sau khi chuyển cảnh kết thúc để tránh giật khung hình.
-          setTimeout(phaoGiay, 760);
-        }, 1800);
-      }
-
-      // ── PHÁO GIẤY ──
-      function phaoGiay() {
-        const mau = [
-          "#d4af37",
-          "#fbbf24",
-          "#fde68a",
-          "#f59e0b",
-          "#fff",
-          "#fef3c7",
-          "#fb923c",
-        ];
-        const opts = {
-          colors: mau,
-          disableForReducedMotion: true,
-        };
-
-        // Nhẹ hơn để tránh giật khi vừa chuyển cảnh.
-        confetti({
-          ...opts,
-          particleCount: 55,
-          spread: 70,
-          origin: { y: 0.62 },
-        });
-        setTimeout(
-          () =>
-            confetti({
-              ...opts,
-              particleCount: 24,
-              spread: 95,
-              origin: { y: 0.5, x: 0.2 },
-            }),
-          220,
-        );
-        setTimeout(
-          () =>
-            confetti({
-              ...opts,
-              particleCount: 24,
-              spread: 95,
-              origin: { y: 0.5, x: 0.8 },
-            }),
-          360,
-        );
-      }
-
-      // ── NHẠC NỀN ──
-      function toggleMusic() {
-        const nhac = document.getElementById("bg-music");
-        const btn = document.getElementById("music-toggle");
-        if (nhacDangPhat) {
-          nhac.pause();
-          nhacDangPhat = false;
-          btn.classList.remove("on");
-        } else {
-          nhac.play();
-          nhacDangPhat = true;
-          btn.classList.add("on");
-        }
-      }
-
-      // ── ĐẾM NGƯỢC ──
-      function demNguoc() {
-        const dich = new Date("2026-10-03T08:30:00+07:00").getTime();
-        const pad = (n) => String(Math.floor(n)).padStart(2, "0");
-        const ids = ["cd-days", "cd-hours", "cd-minutes", "cd-seconds"];
-        function cap() {
-          const con = dich - Date.now();
-          if (con <= 0) {
-            ids.forEach(
-              (id) => (document.getElementById(id).textContent = "00"),
-            );
-            return;
-          }
-          document.getElementById("cd-days").textContent = pad(con / 86400000);
-          document.getElementById("cd-hours").textContent = pad(
-            (con % 86400000) / 3600000,
-          );
-          document.getElementById("cd-minutes").textContent = pad(
-            (con % 3600000) / 60000,
-          );
-          document.getElementById("cd-seconds").textContent = pad(
-            (con % 60000) / 1000,
-          );
-        }
-        cap();
-        setInterval(cap, 1000);
-      }
-
-      // ── GIỚI HẠN LỜI CHÚC: TỐI ĐA 1000 TỪ ──
-      function gioiHanLoiChuc() {
-        const input = document.getElementById("rsvp-message");
-        const counter = document.getElementById("rsvp-word-count");
-        if (!input) return;
-
-        const words = input.value.match(/\S+/g) || [];
-
-        // Nếu vượt quá 1000 từ, chỉ giữ lại 1000 từ đầu tiên
-        if (words.length > 1000) {
-          input.value = words.slice(0, 1000).join(" ");
-        }
-
-        const count = (input.value.match(/\S+/g) || []).length;
-
-        if (counter) {
-          counter.textContent = `${count}/1000 từ`;
-          counter.style.color =
-            count >= 950 ? "rgba(239,68,68,0.85)" : "rgba(212,175,55,0.5)";
-        }
-      }
-
-      // ── RSVP ──
-      function kiemTraRSVP() {
-        if (localStorage.getItem("rsvp_v3") === "1") {
-          document.getElementById("rsvp-form").classList.add("hidden");
-          document.getElementById("rsvp-thankyou").classList.remove("hidden");
-        }
-      }
-
-      async function guiXacNhan(e) {
-        e.preventDefault();
-
-        const submitBtn = document.getElementById("rsvp-submit-btn");
-
-        const attendance = document.getElementById("rsvp-attendance").value;
-        const message = document.getElementById("rsvp-message").value.trim();
-
-        // Khóa nút trong lúc gửi
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Đang gửi...";
-
-        const data = {
-          name: tenKhach,
-          title: danhXung,
-          attending: attendance,
-          guests: attendance === "co-mat" ? 1 : 0,
-          message: message,
-        };
-
-        try {
-          const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbyQCYpIkAF_WCVAuic7g-1OvjoJEzI03-A-BTxZwKhrLpoM_KiFCZze2ldzgaxcGKRR/exec",
-            {
-              method: "POST",
-              mode: "no-cors",
-              headers: {
-                "Content-Type": "text/plain;charset=utf-8",
-              },
-              body: JSON.stringify(data),
-            },
-          );
-
-          // Đánh dấu khách đã phản hồi trên thiết bị hiện tại
-          localStorage.setItem("rsvp_v3", "1");
-
-          // Hiệu ứng thành công
-          phaoGiay();
-
-          document.getElementById("rsvp-form").classList.add("hidden");
-          document.getElementById("rsvp-thankyou").classList.remove("hidden");
-        } catch (error) {
-          console.error("Lỗi gửi RSVP:", error);
-
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Gửi Xác Nhận";
-
-          alert(
-            "Không thể gửi phản hồi. Vui lòng kiểm tra kết nối mạng và thử lại.",
-          );
-        }
-      }
-
-      // ── HẠT BỤI VÀNG ──
-      function hatBuiVang() {
-        const canvas = document.getElementById("particles-canvas");
-        const ctx = canvas.getContext("2d", { alpha: true });
-
-        function resize() {
-          canvas.width = innerWidth;
-          canvas.height = innerHeight;
-        }
-
-        resize();
-        window.addEventListener("resize", resize, { passive: true });
-
-        // Tự giảm số hạt trên máy yếu để giữ chuyển cảnh mượt.
-        const lowPower = (navigator.hardwareConcurrency || 8) <= 4;
-        const count = lowPower ? 34 : 48;
-
-        const hat = Array.from({ length: count }, () => ({
-          x: Math.random() * innerWidth,
-          y: Math.random() * innerHeight,
-          r: Math.random() * 1.55 + 0.35,
-          vx: (Math.random() - 0.5) * 0.18,
-          vy: -Math.random() * 0.32 - 0.07,
-          alpha: Math.random() * 0.4 + 0.08,
-          doi: Math.random(),
-          toc: Math.random() * 0.0022 + 0.0009,
-          h: 38 + Math.random() * 22,
-          s: 62 + Math.random() * 28,
-          l: 52 + Math.random() * 32,
-        }));
-
-        let running = true;
-        let frameId = 0;
-
-        function ve() {
-          if (!running) return;
-
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-          for (const p of hat) {
-            p.doi += p.toc;
-
-            if (p.doi > 1) {
-              p.doi = 0;
-              p.y = canvas.height + 8;
-              p.x = Math.random() * canvas.width;
-            }
-
-            const a = Math.sin(p.doi * Math.PI) * p.alpha;
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `hsla(${p.h},${p.s}%,${p.l}%,${a})`;
-            ctx.fill();
-
-            p.x += p.vx;
-            p.y += p.vy;
-          }
-
-          frameId = requestAnimationFrame(ve);
-        }
-
-        window.pauseGoldParticles = () => {
-          if (!running) return;
-          running = false;
-          cancelAnimationFrame(frameId);
-        };
-
-        window.resumeGoldParticles = () => {
-          if (running) return;
-          running = true;
-          frameId = requestAnimationFrame(ve);
-        };
-
-        frameId = requestAnimationFrame(ve);
-      }
-    </script>
+    <script src="/main.js"></script>
   </body>
 </html>
