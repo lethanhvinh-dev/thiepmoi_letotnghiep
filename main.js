@@ -1060,7 +1060,7 @@ function toggleMusic() {
 // ── ĐẾM NGƯỢC ──
 
 function demNguoc() {
-  const dich = new Date("2026-10-03T08:30:00+07:00").getTime();
+  const dich = new Date("2026-10-03T11:30:00+07:00").getTime();
 
   const pad = (n) => String(Math.floor(n)).padStart(2, "0");
 
