@@ -542,30 +542,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// // =====================================================
-// // MOBILE FALLBACK
-// // Nếu autoplay bị chặn, chạm bất kỳ đâu lần đầu
-// // sẽ kích hoạt nhạc thiệp mời
-// // =====================================================
+// =====================================================
+// MOBILE FALLBACK
+// Nếu autoplay bị chặn, chạm bất kỳ đâu lần đầu
+// sẽ kích hoạt nhạc thiệp mời
+// =====================================================
 
-// let daKichHoatNhac1 = false;
+let daKichHoatNhac1 = false;
 
-// function kichHoatNhac1BangTuongTac() {
-//   // Nếu nhạc 1 đã chạy rồi thì không làm gì
-//   if (daKichHoatNhac1 || nhacDangPhat) return;
+function kichHoatNhac1BangTuongTac() {
+  // Nếu nhạc 1 đã chạy rồi thì không làm gì
+  if (daKichHoatNhac1 || nhacDangPhat) return;
 
-//   // Nếu đã chuyển sang nhạc 2 thì không quay lại nhạc 1
-//   if (nhacHienTai === 2) return;
+  // Nếu đã chuyển sang nhạc 2 thì không quay lại nhạc 1
+  if (nhacHienTai === 2) return;
 
-//   daKichHoatNhac1 = true;
+  daKichHoatNhac1 = true;
 
-//   phatNhac1();
-// }
+  phatNhac1();
+}
 
-// document.addEventListener("pointerdown", kichHoatNhac1BangTuongTac, {
-//   once: true,
-//   capture: true,
-// });
+document.addEventListener("pointerdown", kichHoatNhac1BangTuongTac, {
+  once: true,
+  capture: true,
+});
 
 // ── BƯỚC 1: CHỌN DANH XƯNG ──
 
