@@ -3630,3 +3630,269 @@ body.is-transitioning .glass-card {
     font-size: 0.76rem;
   }
 }
+
+/* LINK VÀO WEB DNTU */
+/* =====================================================
+   360 CAMPUS
+===================================================== */
+
+/* .campus-event-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.campus-event-image-link:hover .campus-event-image {
+  transform: scale(1.03);
+}
+
+.campus-event-image {
+  transition: transform 0.4s ease;
+}
+
+/* =====================================================
+   KHUNG WEBSITE 360 CAMPUS
+===================================================== */
+
+/* .campus360-container {
+  width: 100%;
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+} */
+
+/* Header */
+
+/* .campus360-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 20px;
+
+  background: #f8f5ef;
+  border-bottom: 1px solid #e5e0d8;
+}
+
+.campus360-header h3 {
+  margin: 0;
+  font-size: 18px;
+} */
+
+/* Nút đóng */
+
+/* .campus360-close {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #222;
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.campus360-close:hover {
+  transform: rotate(90deg);
+} */
+
+/* Website */
+
+/* #campus360-frame {
+  display: block;
+
+  width: 100%;
+  height: 750px;
+
+  border: none;
+} */
+
+/* Mobile */
+
+/* @media (max-width: 768px) {
+  .campus360-container {
+    margin-top: 20px;
+    border-radius: 12px;
+  }
+
+  #campus360-frame {
+    height: 650px;
+  }
+
+  .campus360-header {
+    padding: 12px 15px;
+  }
+
+  .campus360-header h3 {
+    font-size: 16px;
+  }
+} */
+
+/* =====================================================
+   360 CAMPUS - HÌNH ẢNH
+===================================================== */
+
+.campus-event-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.campus-event-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.4s ease;
+}
+
+.campus-event-image-link:hover .campus-event-image {
+  transform: scale(1.03);
+}
+
+/* =====================================================
+   KHUNG WEBSITE 360 CAMPUS
+===================================================== */
+
+.campus360-container {
+  width: 100%;
+
+  margin-top: 30px;
+
+  background: #fff;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+  animation: campus360FadeIn 0.4s ease;
+}
+
+/* =====================================================
+   HIỆU ỨNG HIỆN WEBSITE
+===================================================== */
+
+@keyframes campus360FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.campus360-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 15px 20px;
+
+  background: #f8f5ef;
+
+  border-bottom: 1px solid #e5e0d8;
+}
+
+.campus360-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+/* =====================================================
+   NÚT ĐÓNG
+===================================================== */
+
+.campus360-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #222;
+  color: #fff;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.campus360-close:hover {
+  transform: rotate(90deg);
+  background-color: #555;
+}
+/* =====================================================
+   WEBSITE 360
+===================================================== */
+
+#campus360-frame {
+  display: block;
+
+  width: 100%;
+
+  height: 750px;
+
+  border: none;
+
+  background: #fff;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .campus360-container {
+    margin-top: 20px;
+
+    border-radius: 12px;
+  }
+
+  #campus360-frame {
+    height: 650px;
+  }
+
+  .campus360-header {
+    padding: 12px 15px;
+  }
+
+  .campus360-header h3 {
+    font-size: 16px;
+  }
+
+  .campus360-close {
+    width: 34px;
+
+    height: 34px;
+  }
+}

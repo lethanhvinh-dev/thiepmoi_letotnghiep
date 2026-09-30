@@ -1342,3 +1342,82 @@ function hatBuiVang() {
 
   frameId = requestAnimationFrame(ve);
 }
+// LINK VÀO WEB CẢU TRƯỜNG DNTU
+// function moCampus360() {
+//   const container = document.getElementById("campus360-container");
+//   const iframe = document.getElementById("campus360-frame");
+
+//   iframe.src = "https://360campus.dntu.edu.vn/";
+
+//   container.style.display = "block";
+
+//   // Cuộn xuống phần website 360
+//   setTimeout(() => {
+//     container.scrollIntoView({
+//       behavior: "smooth",
+//       block: "start",
+//     });
+//   }, 100);
+// }
+
+// function dongCampus360() {
+//   const container = document.getElementById("campus360-container");
+//   const iframe = document.getElementById("campus360-frame");
+
+//   container.style.display = "none";
+
+//   // Xóa iframe để dừng website
+//   iframe.src = "";
+// }
+
+/* =====================================================
+   MỞ WEBSITE 360 CAMPUS
+===================================================== */
+
+function moCampus360() {
+  const container = document.getElementById("campus360-container");
+
+  const iframe = document.getElementById("campus360-frame");
+
+  // Hiển thị khung 360 Campus
+
+  container.style.display = "block";
+
+  // Xóa iframe cũ
+
+  iframe.src = "about:blank";
+
+  // Chờ một chút rồi mới tải website
+
+  setTimeout(function () {
+    iframe.src = "https://360campus.dntu.edu.vn/";
+  }, 100);
+
+  // Cuộn xuống phần 360 Campus
+
+  setTimeout(function () {
+    container.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 150);
+}
+
+/* =====================================================
+   ĐÓNG WEBSITE 360 CAMPUS
+===================================================== */
+
+function dongCampus360() {
+  const container = document.getElementById("campus360-container");
+
+  const iframe = document.getElementById("campus360-frame");
+
+  // Ẩn khung
+
+  container.style.display = "none";
+
+  // Xóa iframe hoàn toàn
+  // Website + âm thanh bên trong sẽ dừng
+
+  iframe.src = "about:blank";
+}

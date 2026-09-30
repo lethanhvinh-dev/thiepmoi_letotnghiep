@@ -635,7 +635,7 @@
                   class="w-full h-full rounded-full overflow-hidden avatar-inner"
                 >
                   <img
-                    src="/img/zinh.png"
+                    src="/img/zinh1.png"
                     alt="Ảnh Kỹ Sư Lê Thành Vinh"
                     class="w-full h-full object-cover avatar-img"
                   />
@@ -833,10 +833,8 @@
           </div>
 
           <!-- =====================================================
-
-     TRUNG TÂM TỔ CHỨC SỰ KIỆN VÀ GIẢI TRÍ
-
-\====================================================== -->
+    TRUNG TÂM TỔ CHỨC SỰ KIỆN VÀ GIẢI TRÍ
+====================================================== -->
 
           <section class="campus-event-section">
             <div class="campus-event-header">
@@ -847,7 +845,6 @@
 
                 <h2>
                   TRUNG TÂM TỔ CHỨC SỰ KIỆN
-
                   <span>& GIẢI TRÍ</span>
                 </h2>
 
@@ -858,38 +855,56 @@
             </div>
 
             <p class="campus-event-description">
-              Thành Vinh hẹn mọi gnười ở đây nhoa 🥰
+              <span>Thành Vinh hẹn mọi người ở đây nhoa 🥰 </span>
             </p>
 
             <div class="campus-event-card">
+              <!-- ================= HÌNH ẢNH ================= -->
+
               <div class="campus-event-image-wrap">
-                <img
-                  src="/img/TTTCSK.png"
-                  alt="Trung tâm tổ chức sự kiện và giải trí - Trường Đại học Công Nghệ Đồng Nai"
-                  class="campus-event-image"
-                  loading="lazy"
-                />
+                <!-- BẤM VÀO HÌNH -->
+
+                <a
+                  href="https://360campus.dntu.edu.vn/"
+                  class="campus-event-image-link"
+                  onclick="
+                    event.preventDefault();
+                    moCampus360();
+                  "
+                >
+                  <img
+                    src="/img/TTTCSK.png"
+                    alt="Trung tâm tổ chức sự kiện và giải trí - Trường Đại học Công Nghệ Đồng Nai"
+                    class="campus-event-image"
+                    loading="lazy"
+                  />
+                </a>
 
                 <div class="campus-event-overlay"></div>
 
+                <!-- ================= ĐỊA ĐIỂM ================= -->
+
                 <div class="campus-event-location">
-                  <a
+                  <!-- <a
                     href="https://maps.google.com/?q=Trường+Đại+Học+Công+Nghệ+Đồng+Nai"
-                    target="\_blank"
+                    target="_blank"
                     rel="noopener noreferrer"
                     class="campus-location-link"
-                  >
-                    <i data-lucide="map-pin"></i>
+                  > -->
+                  <!-- <i data-lucide="map-pin"></i> -->
+                  <i
+                    data-lucide="navigation"
+                    class="campus-navigation-icon"
+                  ></i>
+                  <span>
+                    NHẤP VÀO ẢNH ĐỂ THAM QUAN KHUÔN VIÊN TRƯỜNG 360 CAM
+                  </span>
 
-                    <span> Trường Đại học Công Nghệ Đồng Nai </span>
-
-                    <i
-                      data-lucide="navigation"
-                      class="campus-navigation-icon"
-                    ></i>
-                  </a>
+                  <!-- </a> -->
                 </div>
               </div>
+
+              <!-- ================= THÔNG TIN ================= -->
 
               <div class="campus-event-info">
                 <div class="campus-event-info-icon">
@@ -906,6 +921,59 @@
                   </p>
                 </div>
               </div>
+            </div>
+
+            <!-- =====================================================
+       WEBSITE 360 CAMPUS
+       MẶC ĐỊNH ẨN
+  ====================================================== -->
+
+            <div
+              id="campus360-container"
+              class="campus360-container"
+              style="display: none"
+            >
+              <!-- HEADER -->
+
+              <div class="campus360-header">
+                <h3>360° Campus - DNTU</h3>
+
+                <button
+                  type="button"
+                  class="campus360-close"
+                  onclick="dongCampus360()"
+                  aria-label="Đóng"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <!-- WEBSITE 360 -->
+
+              <iframe
+                id="campus360-frame"
+                src="about:blank"
+                title="360 Campus - Trường Đại học Công Nghệ Đồng Nai"
+                allow="
+                  fullscreen;
+                  xr-spatial-tracking;
+                  gyroscope;
+                  accelerometer;
+                "
+                sandbox="
+                allow-scripts
+                allow-same-origin
+                allow-forms
+                allow-popups
+                allow-modals
+                allow-pointer-lock
+                allow-presentation
+                allow-orientation-lock
+                allow-downloads
+                "
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </section>
 
